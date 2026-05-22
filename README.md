@@ -49,9 +49,9 @@ Docker · AWS · Vercel
 
 <div align="center">
 
-![João's GitHub Stats](https://github-readme-stats.vercel.app/api?username=juboyy&show_icons=true&theme=dark&hide_border=true&count_private=true)
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=juboyy&theme=dark&hide_border=true)](https://git.io/streak-stats)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=juboyy&layout=compact&theme=dark&hide_border=true)
+[![trophy](https://github-profile-trophy.vercel.app/?username=juboyy&theme=darkhub&no-frame=true&row=1&column=6)](https://github.com/ryo-ma/github-profile-trophy)
 
 </div>
 
