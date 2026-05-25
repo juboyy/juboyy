@@ -1,13 +1,14 @@
 <div align="center">
 
-# 👋 Olá, eu sou **João Rafael**
+![Header](https://capsule-render.vercel.app/api?type=waving&color=0:E87722,100:F4A261&height=200&section=header&text=João%20Rafael&fontSize=70&fontColor=fff&animation=fadeIn&fontAlignY=35)
 
-### 🏗️ Builder · 🧠 Visionary · ⚡ Engineer
+### 🏗️ Builder · 🧠 Visionary · ⚡ Engineer · 🐾 Pet Tech Founder
 
 > *"Construo sistemas que resolvem problemas reais. Zero floreio, tijolo e cimento."*
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jo%C3%A3o-soares-716400229/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joão-soares-716400229?utm_source=share_via&utm_content=profile&utm_medium=member_ios)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/juboyy)
+[![Research Wiki](https://img.shields.io/badge/🐾_AMIAU_Research_Wiki-E87722?style=flat-square)](https://juboyy.github.io/research-wiki/)
 
 </div>
 
@@ -19,6 +20,7 @@
 - 🤖 **IA & Automação** — Agentes inteligentes, pipelines automatizados
 - 🌐 **Produtos Digitais** — Do zero ao deploy, foco em impacto real
 - 📊 **Fintech & Data** — Sistemas financeiros, análise, automação
+- 🐾 **Pet Tech & Consciência Animal** — Comunicação interespecífica, wearables, IA para animais
 
 ---
 
@@ -26,6 +28,7 @@
 
 | Projeto | Descrição | Stack |
 |---------|-----------|-------|
+| [**AMIAU Research Wiki**](https://juboyy.github.io/research-wiki/) | Revista científica + wiki técnica sobre consciência, IA, animais, IoT e wearables | Docusaurus, AutoResearchClaw |
 | [**SpentAI**](https://github.com/juboyy/spentai-showcase) | Track expenses by sending a text message | TypeScript, AI |
 | [**FinLearn Vista**](https://github.com/juboyy/finlearn-vista) | NotebookLM alternative for Fintech Learning | Python, AI |
 | [**FintechLM**](https://github.com/juboyy/fintechLM) | Financial Learning Management | Python, ML |
@@ -73,12 +76,13 @@ Docker · AWS · Vercel
 - 🔬 Explorando **agentes autônomos** e **orquestração multi-agent**
 - 🏗️ Construindo **Eliza** — minha extensão digital sem limites
 - 📚 Estudando **Directional Prompting** e **engenharia de sistemas de IA**
+- 🐾 Desenvolvendo **AMIAU** — ponte entre humanos, animais e IA
 
 ---
 
 ## 📫 Contato
 
-- 💼 [LinkedIn](https://linkedin.com/in/joaorafael)
+- 💼 [LinkedIn](https://www.linkedin.com/in/joão-soares-716400229?utm_source=share_via&utm_content=profile&utm_medium=member_ios)
 - 🐦 [Twitter/X](https://twitter.com/juboyy)
 - 📧 [Email](mailto:juboyy@gmail.com)
 
