@@ -42,18 +42,19 @@
 
 ## 🚀 Selected Work
 
-> 🔒 = private/confidential repository. Descriptions under NDA, no links.
+> 🔒 = private/confidential repository (under NDA, no links).
 
 | Project | Description | Stack |
 |---|---|---|
-| 🔒 **‹PRIVATE PROJECT NAME 1›** | ‹What it is · your role · impact/scale — TO FILL› | `‹stack›` |
-| 🔒 **‹PRIVATE PROJECT NAME 2›** | ‹What it is · your role · impact/scale — TO FILL› | `‹stack›` |
+| 🔒 **Paganini One** | **Agent-as-a-Service** platform (BYOK) — white-label, multi-tenant agent orchestration | `TypeScript` `AI Agents` `SaaS` |
+| 🔒 **Cronos** | **Multi-agent intelligence** engine for public opinion analysis and predictive simulation | `TypeScript` `Multi-Agent` `Simulation` |
+| 🔒 **Payments Gateway** | Gateway API for vehicle-debt payments — banking integration, recurring billing and async processing | `Ruby on Rails` `Stripe` `Sidekiq` |
+| 🔒 **Aya OS** | **Agentic operating system** for financial micro-enterprises | `TypeScript` `AI Agents` `Fintech` |
+| 🔒 **Revenue OS** | **Revenue Operations** platform — revenue automation and orchestration | `TypeScript` `RevOps` |
+| 🔒 **Meta Ops** | **Advanced Facebook Ads metrics** dashboard (Hook Rate, Connect Rate, video retention, creative performance) | `TypeScript` `Analytics` |
 | [**AMIAU Research Wiki**](https://juboyy.github.io/research-wiki/) | Scientific journal + technical wiki on consciousness, AI, animals, IoT and wearables | `Docusaurus` `AutoResearchClaw` |
 | [**SpentAI**](https://github.com/juboyy/spentai-showcase) | Track expenses by sending a text message | `TypeScript` `AI` |
 | [**FinLearn Vista**](https://github.com/juboyy/finlearn-vista) | NotebookLM alternative for Fintech learning | `Python` `AI` |
-| [**FintechLM**](https://github.com/juboyy/fintechLM) | Financial Learning Management System | `Python` `ML` |
-| [**Enterprise Profile Analysis**](https://github.com/juboyy/enterprise-profile-analisys) | AI-powered enterprise profile analysis | `Python` `AI` |
-| [**Fine-tuning**](https://github.com/juboyy/fine-tuning) | Autonomous fine-tuning experiments | `Python` `ML` |
 
 ---
 

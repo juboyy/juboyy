@@ -42,18 +42,19 @@
 
 ## 🚀 Projetos Selecionados
 
-> 🔒 = repositório privado/confidencial. Descrições sob NDA, sem links.
+> 🔒 = repositório privado/confidencial (sob NDA, sem links).
 
 | Projeto | Descrição | Stack |
 |---|---|---|
-| 🔒 **‹NOME DO PROJETO PRIVADO 1›** | ‹O que é · seu papel · impacto/escala — PREENCHER› | `‹stack›` |
-| 🔒 **‹NOME DO PROJETO PRIVADO 2›** | ‹O que é · seu papel · impacto/escala — PREENCHER› | `‹stack›` |
+| 🔒 **Paganini One** | Plataforma **Agent-as-a-Service** (BYOK) — orquestração de agentes white-label, multi-tenant | `TypeScript` `AI Agents` `SaaS` |
+| 🔒 **Cronos** | Engine de **inteligência multi-agente** para análise de opinião pública e simulação preditiva | `TypeScript` `Multi-Agent` `Simulação` |
+| 🔒 **Gateway de Pagamentos** | API de gateway para débitos veiculares — integração bancária, billing recorrente e processamento assíncrono | `Ruby on Rails` `Stripe` `Sidekiq` |
+| 🔒 **Aya OS** | **Sistema operacional agêntico** para microempresas financeiras | `TypeScript` `AI Agents` `Fintech` |
+| 🔒 **Revenue OS** | Plataforma de **Revenue Operations** — automação e orquestração de receita | `TypeScript` `RevOps` |
+| 🔒 **Meta Ops** | Dashboard de **métricas avançadas de Facebook Ads** (Hook Rate, Connect Rate, retenção de vídeo, performance de criativos) | `TypeScript` `Analytics` |
 | [**AMIAU Research Wiki**](https://juboyy.github.io/research-wiki/) | Revista científica + wiki técnica sobre consciência, IA, animais, IoT e wearables | `Docusaurus` `AutoResearchClaw` |
 | [**SpentAI**](https://github.com/juboyy/spentai-showcase) | Controle de gastos enviando uma simples mensagem de texto | `TypeScript` `IA` |
 | [**FinLearn Vista**](https://github.com/juboyy/finlearn-vista) | Alternativa ao NotebookLM voltada para educação em Fintech | `Python` `IA` |
-| [**FintechLM**](https://github.com/juboyy/fintechLM) | Plataforma de aprendizado financeiro (LMS) | `Python` `ML` |
-| [**Enterprise Profile Analysis**](https://github.com/juboyy/enterprise-profile-analisys) | Análise de perfis empresariais com IA | `Python` `IA` |
-| [**Fine-tuning**](https://github.com/juboyy/fine-tuning) | Experimentos de fine-tuning autônomo | `Python` `ML` |
 
 ---
 
