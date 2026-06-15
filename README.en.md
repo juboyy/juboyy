@@ -6,10 +6,10 @@
 
 **Software Engineer · AI Systems Architect · Pet Tech Founder**
 
-*Construo sistemas que resolvem problemas reais — arquitetura sólida, código limpo, impacto mensurável.*
+*I build systems that solve real problems — solid architecture, clean code, measurable impact.*
 
-[![🇧🇷 Português](https://img.shields.io/badge/🇧🇷_Português-E87722?style=for-the-badge)](./README.md)
-[![🇺🇸 English](https://img.shields.io/badge/🇺🇸_English-1A1A1A?style=for-the-badge)](./README.en.md)
+[![🇧🇷 Português](https://img.shields.io/badge/🇧🇷_Português-1A1A1A?style=for-the-badge)](./README.md)
+[![🇺🇸 English](https://img.shields.io/badge/🇺🇸_English-E87722?style=for-the-badge)](./README.en.md)
 
 <br>
 
@@ -22,40 +22,40 @@
 
 ---
 
-## 🧭 Visão Geral
+## 🧭 Overview
 
-> Engenheiro de software focado em **sistemas de IA em produção**, **fintech** e **pet tech**. Atuo do design de arquitetura ao deploy, priorizando confiabilidade, escala e clareza.
+> Software engineer focused on **production-grade AI systems**, **fintech**, and **pet tech**. I work from architecture design through deployment, prioritizing reliability, scale, and clarity.
 
 ---
 
-## 💼 Áreas de Atuação
+## 💼 Core Competencies
 
-| Domínio | Capacidades |
+| Domain | Capabilities |
 |---|---|
-| 🔧 **Engenharia de Software** | Arquitetura distribuída, código limpo, sistemas escaláveis |
-| 🤖 **IA & Automação** | Agentes autônomos, RAG, orquestração multi-agent, pipelines |
-| 🌐 **Produtos Digitais** | Ciclo completo: do discovery ao deploy |
-| 📊 **Fintech & Data** | Sistemas financeiros, análise de dados, automação |
-| 🐾 **Pet Tech** | Comunicação interespécie, wearables, IA aplicada a animais |
+| 🔧 **Software Engineering** | Distributed architecture, clean code, scalable systems |
+| 🤖 **AI & Automation** | Autonomous agents, RAG, multi-agent orchestration, pipelines |
+| 🌐 **Digital Products** | End-to-end: from discovery to deploy |
+| 📊 **Fintech & Data** | Financial systems, data analytics, automation |
+| 🐾 **Pet Tech** | Interspecies communication, wearables, applied AI for animals |
 
 ---
 
-## 🚀 Projetos Selecionados
+## 🚀 Selected Work
 
-| Projeto | Descrição | Stack |
+| Project | Description | Stack |
 |---|---|---|
-| [**AMIAU Research Wiki**](https://juboyy.github.io/research-wiki/) | Revista científica + wiki técnica sobre consciência, IA, animais, IoT e wearables | `Docusaurus` `AutoResearchClaw` |
-| [**SpentAI**](https://github.com/juboyy/spentai-showcase) | Controle de gastos enviando uma simples mensagem de texto | `TypeScript` `IA` |
-| [**FinLearn Vista**](https://github.com/juboyy/finlearn-vista) | Alternativa ao NotebookLM voltada para educação em Fintech | `Python` `IA` |
-| [**FintechLM**](https://github.com/juboyy/fintechLM) | Plataforma de aprendizado financeiro (LMS) | `Python` `ML` |
-| [**Enterprise Profile Analysis**](https://github.com/juboyy/enterprise-profile-analisys) | Análise de perfis empresariais com IA | `Python` `IA` |
-| [**Fine-tuning**](https://github.com/juboyy/fine-tuning) | Experimentos de fine-tuning autônomo | `Python` `ML` |
+| [**AMIAU Research Wiki**](https://juboyy.github.io/research-wiki/) | Scientific journal + technical wiki on consciousness, AI, animals, IoT and wearables | `Docusaurus` `AutoResearchClaw` |
+| [**SpentAI**](https://github.com/juboyy/spentai-showcase) | Track expenses by sending a text message | `TypeScript` `AI` |
+| [**FinLearn Vista**](https://github.com/juboyy/finlearn-vista) | NotebookLM alternative for Fintech learning | `Python` `AI` |
+| [**FintechLM**](https://github.com/juboyy/fintechLM) | Financial Learning Management System | `Python` `ML` |
+| [**Enterprise Profile Analysis**](https://github.com/juboyy/enterprise-profile-analisys) | AI-powered enterprise profile analysis | `Python` `AI` |
+| [**Fine-tuning**](https://github.com/juboyy/fine-tuning) | Autonomous fine-tuning experiments | `Python` `ML` |
 
 ---
 
-## 🛠️ Stack Tecnológico
+## 🛠️ Technology Stack
 
-**Linguagens & Frameworks**
+**Languages & Frameworks**
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -63,12 +63,12 @@
 ![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
 
-**IA / ML**
+**AI / ML**
 
 ![LLMs](https://img.shields.io/badge/LLMs%20·%20RAG%20·%20Agents-E87722?style=flat-square&logo=openai&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/Fine--tuning%20·%20MLOps-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
 
-**Dados & Infraestrutura**
+**Data & Infrastructure**
 
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
@@ -79,7 +79,7 @@
 
 ---
 
-## 📊 Métricas de Atividade
+## 📊 Activity Metrics
 
 <div align="center">
 
@@ -111,27 +111,27 @@
 
 ---
 
-## 🧠 Princípios de Engenharia
+## 🧠 Engineering Principles
 
-> **80% planejamento · 20% execução**
+> **80% planning · 20% execution**
 
-- PRD antes de código
-- Testes antes de deploy
-- Documentação antes de reunião
-- Reduzir entropia, não adicionar ruído
-
----
-
-## 🌱 Em Andamento
-
-- 🔬 Explorando **agentes autônomos** e **orquestração multi-agent**
-- 🏗️ Construindo **Eliza** — extensão digital sem limites
-- 📚 Estudando **Directional Prompting** e **engenharia de sistemas de IA**
-- 🐾 Desenvolvendo **AMIAU** — ponte entre humanos, animais e IA
+- Spec before code
+- Tests before deploy
+- Docs before meetings
+- Reduce entropy, don't add noise
 
 ---
 
-## 📫 Contato
+## 🌱 In Progress
+
+- 🔬 Exploring **autonomous agents** and **multi-agent orchestration**
+- 🏗️ Building **Eliza** — a limitless digital extension
+- 📚 Studying **Directional Prompting** and **AI systems engineering**
+- 🐾 Developing **AMIAU** — a bridge between humans, animals, and AI
+
+---
+
+## 📫 Get in Touch
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jo%C3%A3o-soares-716400229)
 [![Twitter/X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/juboyy)
@@ -141,9 +141,9 @@
 
 <div align="center">
 
-⭐ **Se curtiu algum projeto, deixa uma star!**
+⭐ **If a project resonates, leave a star!**
 
-<sub>*"Extensões protegem o que estendem."*</sub>
+<sub>*"Extensions protect what they extend."*</sub>
 
 ![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:F4A261,100:E87722&height=120&section=footer)
 
