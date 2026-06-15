@@ -2,53 +2,84 @@
 
 ![Header](https://capsule-render.vercel.app/api?type=waving&color=0:E87722,100:F4A261&height=200&section=header&text=João%20Rafael&fontSize=70&fontColor=fff&animation=fadeIn&fontAlignY=35)
 
-### 🏗️ Builder · 🧠 Visionary · ⚡ Engineer · 🐾 Pet Tech Founder
+# João Rafael Soares
 
-> *"Construo sistemas que resolvem problemas reais. Zero floreio, tijolo e cimento."*
+**Software Engineer · AI Systems Architect · Pet Tech Founder**
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/joão-soares-716400229?utm_source=share_via&utm_content=profile&utm_medium=member_ios)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/juboyy)
-[![Research Wiki](https://img.shields.io/badge/🐾_AMIAU_Research_Wiki-E87722?style=flat-square)](https://juboyy.github.io/research-wiki/)
+<sub>🇧🇷 *Construo sistemas que resolvem problemas reais — arquitetura sólida, código limpo, impacto mensurável.*</sub><br>
+<sub>🇺🇸 *I build systems that solve real problems — solid architecture, clean code, measurable impact.*</sub>
+
+<br>
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jo%C3%A3o-soares-716400229)
+[![Email](https://img.shields.io/badge/Email-E87722?style=for-the-badge&logo=gmail&logoColor=white)](mailto:joao@aumi.group)
+[![Research Wiki](https://img.shields.io/badge/AMIAU_Research_Wiki-1A1A1A?style=for-the-badge&logo=readthedocs&logoColor=E87722)](https://juboyy.github.io/research-wiki/)
+[![Profile Views](https://komarev.com/ghpvc/?username=juboyy&style=for-the-badge&color=E87722&label=PROFILE+VIEWS)](https://github.com/juboyy)
 
 </div>
 
 ---
 
-## 🎯 O que eu faço
+## 🧭 Visão Geral · Overview
 
-- 🔧 **Engenharia de Software** — Arquitetura, código limpo, sistemas escaláveis
-- 🤖 **IA & Automação** — Agentes inteligentes, pipelines automatizados
-- 🌐 **Produtos Digitais** — Do zero ao deploy, foco em impacto real
-- 📊 **Fintech & Data** — Sistemas financeiros, análise, automação
-- 🐾 **Pet Tech & Consciência Animal** — Comunicação interespecífica, wearables, IA para animais
+> 🇧🇷 Engenheiro de software focado em **sistemas de IA em produção**, **fintech** e **pet tech**. Atuo do design de arquitetura ao deploy, priorizando confiabilidade, escala e clareza.
+>
+> 🇺🇸 Software engineer focused on **production-grade AI systems**, **fintech**, and **pet tech**. I work from architecture design through deployment, prioritizing reliability, scale, and clarity.
 
 ---
 
-## 🚀 Projetos em Destaque
+## 💼 Áreas de Atuação · Core Competencies
 
-| Projeto | Descrição | Stack |
-|---------|-----------|-------|
-| [**AMIAU Research Wiki**](https://juboyy.github.io/research-wiki/) | Revista científica + wiki técnica sobre consciência, IA, animais, IoT e wearables | Docusaurus, AutoResearchClaw |
-| [**SpentAI**](https://github.com/juboyy/spentai-showcase) | Track expenses by sending a text message | TypeScript, AI |
-| [**FinLearn Vista**](https://github.com/juboyy/finlearn-vista) | NotebookLM alternative for Fintech Learning | Python, AI |
-| [**FintechLM**](https://github.com/juboyy/fintechLM) | Financial Learning Management | Python, ML |
-| [**Enterprise Profile Analysis**](https://github.com/juboyy/enterprise-profile-analisys) | AI-powered profile analysis | Python, AI |
-| [**Fine-tuning**](https://github.com/juboyy/fine-tuning) | Autonomous fine-tuning experiments | Python, ML |
-
----
-
-## 🛠️ Stack Principal
-
-```
-TypeScript · Python · Node.js · React · Next.js
-AI/ML · LLMs · RAG · Agents
-PostgreSQL · MongoDB · Redis
-Docker · AWS · Vercel
-```
+| Domínio · Domain | Capacidades · Capabilities |
+|---|---|
+| 🔧 **Engenharia de Software** · *Software Engineering* | Arquitetura distribuída, código limpo, sistemas escaláveis · *Distributed architecture, clean code, scalable systems* |
+| 🤖 **IA & Automação** · *AI & Automation* | Agentes autônomos, RAG, orquestração multi-agent, pipelines · *Autonomous agents, RAG, multi-agent orchestration, pipelines* |
+| 🌐 **Produtos Digitais** · *Digital Products* | Ciclo completo: do discovery ao deploy · *End-to-end: from discovery to deploy* |
+| 📊 **Fintech & Data** | Sistemas financeiros, análise de dados, automação · *Financial systems, data analytics, automation* |
+| 🐾 **Pet Tech** | Comunicação interespécie, wearables, IA aplicada a animais · *Interspecies communication, wearables, applied AI for animals* |
 
 ---
 
-## 📊 GitHub Stats Premium
+## 🚀 Projetos Selecionados · Selected Work
+
+| Projeto · Project | Descrição · Description | Stack |
+|---|---|---|
+| [**AMIAU Research Wiki**](https://juboyy.github.io/research-wiki/) | 🇧🇷 Revista científica + wiki técnica sobre consciência, IA, animais, IoT e wearables<br>🇺🇸 Scientific journal + technical wiki on consciousness, AI, animals, IoT and wearables | `Docusaurus` `AutoResearchClaw` |
+| [**SpentAI**](https://github.com/juboyy/spentai-showcase) | 🇧🇷 Controle de gastos via mensagem de texto<br>🇺🇸 Track expenses by sending a text message | `TypeScript` `AI` |
+| [**FinLearn Vista**](https://github.com/juboyy/finlearn-vista) | 🇧🇷 Alternativa ao NotebookLM para educação em Fintech<br>🇺🇸 NotebookLM alternative for Fintech learning | `Python` `AI` |
+| [**FintechLM**](https://github.com/juboyy/fintechLM) | 🇧🇷 Plataforma de aprendizado financeiro (LMS)<br>🇺🇸 Financial Learning Management System | `Python` `ML` |
+| [**Enterprise Profile Analysis**](https://github.com/juboyy/enterprise-profile-analisys) | 🇧🇷 Análise de perfis empresariais com IA<br>🇺🇸 AI-powered enterprise profile analysis | `Python` `AI` |
+| [**Fine-tuning**](https://github.com/juboyy/fine-tuning) | 🇧🇷 Experimentos de fine-tuning autônomo<br>🇺🇸 Autonomous fine-tuning experiments | `Python` `ML` |
+
+---
+
+## 🛠️ Stack Tecnológico · Technology Stack
+
+**Languages & Frameworks**
+
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
+
+**AI / ML**
+
+![LLMs](https://img.shields.io/badge/LLMs%20·%20RAG%20·%20Agents-E87722?style=flat-square&logo=openai&logoColor=white)
+![PyTorch](https://img.shields.io/badge/Fine--tuning%20·%20MLOps-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+
+**Data & Infrastructure**
+
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
+
+---
+
+## 📊 Métricas de Atividade · Activity Metrics
 
 <div align="center">
 
@@ -66,7 +97,7 @@ Docker · AWS · Vercel
 
 <br>
 
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=juboyy&theme=radical&hide_border=true&background=0D1117&ring=E87722&fire=F4A261&currStreakLabel=E87722)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.demolab.com?user=juboyy&theme=radical&hide_border=true&background=0D1117&ring=E87722&fire=F4A261&currStreakLabel=E87722)](https://github.com/juboyy)
 
 <br>
 
@@ -80,38 +111,42 @@ Docker · AWS · Vercel
 
 ---
 
-## 🧠 Filosofia
+## 🧠 Princípios de Engenharia · Engineering Principles
 
-> **80% planejamento · 20% execução**
+> **80% planejamento · 20% execução** — *80% planning · 20% execution*
 
-- PRD antes de código
-- Testes antes de deploy
-- Documentação antes de meeting
-- Reduzir entropia, não adicionar ruído
-
----
-
-## 🌱 Atualmente
-
-- 🔬 Explorando **agentes autônomos** e **orquestração multi-agent**
-- 🏗️ Construindo **Eliza** — minha extensão digital sem limites
-- 📚 Estudando **Directional Prompting** e **engenharia de sistemas de IA**
-- 🐾 Desenvolvendo **AMIAU** — ponte entre humanos, animais e IA
+| 🇧🇷 Português | 🇺🇸 English |
+|---|---|
+| PRD antes de código | Spec before code |
+| Testes antes de deploy | Tests before deploy |
+| Documentação antes de reunião | Docs before meetings |
+| Reduzir entropia, não adicionar ruído | Reduce entropy, don't add noise |
 
 ---
 
-## 📫 Contato
+## 🌱 Em Andamento · In Progress
 
-- 💼 [LinkedIn](https://www.linkedin.com/in/joão-soares-716400229?utm_source=share_via&utm_content=profile&utm_medium=member_ios)
-- 🐦 [Twitter/X](https://twitter.com/juboyy)
-- 📧 [Email](mailto:juboyy@gmail.com)
+- 🔬 🇧🇷 Explorando **agentes autônomos** e **orquestração multi-agent** · 🇺🇸 Exploring **autonomous agents** and **multi-agent orchestration**
+- 🏗️ 🇧🇷 Construindo **Eliza** — extensão digital sem limites · 🇺🇸 Building **Eliza** — a limitless digital extension
+- 📚 🇧🇷 Estudando **Directional Prompting** e **engenharia de sistemas de IA** · 🇺🇸 Studying **Directional Prompting** and **AI systems engineering**
+- 🐾 🇧🇷 Desenvolvendo **AMIAU** — ponte entre humanos, animais e IA · 🇺🇸 Developing **AMIAU** — a bridge between humans, animals, and AI
+
+---
+
+## 📫 Contato · Get in Touch
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jo%C3%A3o-soares-716400229)
+[![Twitter/X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/juboyy)
+[![Email](https://img.shields.io/badge/Email-E87722?style=for-the-badge&logo=gmail&logoColor=white)](mailto:joao@aumi.group)
 
 ---
 
 <div align="center">
 
-⭐ **Se curtiu algum projeto, deixa uma star!**
+⭐ 🇧🇷 **Se curtiu algum projeto, deixa uma star!** · 🇺🇸 **If a project resonates, leave a star!**
 
-*"Extensões protegem o que estendem."*
+<sub>*"Extensões protegem o que estendem." · "Extensions protect what they extend."*</sub>
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:F4A261,100:E87722&height=120&section=footer)
 
 </div>
