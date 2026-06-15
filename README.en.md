@@ -52,6 +52,10 @@
 | 🔒 **Aya OS** | **Agentic operating system** for financial micro-enterprises | `TypeScript` `AI Agents` `Fintech` |
 | 🔒 **Revenue OS** | **Revenue Operations** platform — revenue automation and orchestration | `TypeScript` `RevOps` |
 | 🔒 **Meta Ops** | **Advanced Facebook Ads metrics** dashboard (Hook Rate, Connect Rate, video retention, creative performance) | `TypeScript` `Analytics` |
+| 🔒 **OpenClaw** | **Autonomous agent** ecosystem — Prompts 2.0 with swarm architecture | `Agent Framework` `Prompt Eng` |
+| 🔒 **OraCLI** | Agent workspace — memory core, skills and scripts (SOUL) | `CLI` `Agents` |
+| 🔒 **Paganini AIOS** | **AI operating system** core (agent runtime) | `Python` `AI OS` |
+| 🔒 **NeuroForge AI** | AI platform / model forge | `TypeScript` `AI` |
 | [**AMIAU Research Wiki**](https://juboyy.github.io/research-wiki/) | Scientific journal + technical wiki on consciousness, AI, animals, IoT and wearables | `Docusaurus` `AutoResearchClaw` |
 | [**SpentAI**](https://github.com/juboyy/spentai-showcase) | Track expenses by sending a text message | `TypeScript` `AI` |
 | [**FinLearn Vista**](https://github.com/juboyy/finlearn-vista) | NotebookLM alternative for Fintech learning | `Python` `AI` |
