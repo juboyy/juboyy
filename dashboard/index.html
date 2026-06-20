@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BTC 5m · Polymarket — Operations Dashboard</title>
+  <link rel="stylesheet" href="/static/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">₿</span>
+      <div>
+        <h1>BTC 5m · Polymarket</h1>
+        <span class="subtitle">Live operations dashboard</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <span id="bot-state" class="pill pill-muted">…</span>
+      <span id="profile" class="pill pill-muted">profile —</span>
+      <span id="conn" class="pill pill-muted">connecting…</span>
+      <span id="clock" class="clock">--:--:--</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- KPI row -->
+    <section class="kpi-grid">
+      <div class="card kpi"><span class="kpi-label">P&L Hoje</span><span id="pnl-today" class="kpi-value">—</span><span id="pnl-today-sub" class="kpi-sub"></span></div>
+      <div class="card kpi"><span class="kpi-label">P&L Total</span><span id="pnl-total" class="kpi-value">—</span><span id="pnl-total-sub" class="kpi-sub"></span></div>
+      <div class="card kpi"><span class="kpi-label">Win rate</span><span id="winrate" class="kpi-value">—</span><span id="winrate-sub" class="kpi-sub"></span></div>
+      <div class="card kpi"><span class="kpi-label">Trades hoje</span><span id="trades-today" class="kpi-value">—</span><span id="trades-today-sub" class="kpi-sub"></span></div>
+      <div class="card kpi"><span class="kpi-label">Uptime</span><span id="uptime" class="kpi-value">—</span><span id="uptime-sub" class="kpi-sub"></span></div>
+    </section>
+
+    <div class="two-col">
+      <!-- Live signal -->
+      <section class="card">
+        <h2>Sinal ao vivo</h2>
+        <div id="signal-window" class="signal-banner">aguardando sinal…</div>
+        <div class="signal-grid">
+          <div><span class="lbl">UP ask</span><span id="sig-up" class="val">—</span></div>
+          <div><span class="lbl">DOWN ask</span><span id="sig-down" class="val">—</span></div>
+          <div><span class="lbl">Tempo p/ fechar</span><span id="sig-sl" class="val">—</span></div>
+          <div><span class="lbl">Skew</span><span id="sig-skew" class="val">—</span></div>
+          <div><span class="lbl">Spread</span><span id="sig-spread" class="val">—</span></div>
+          <div><span class="lbl">Gamma U/D</span><span id="sig-gamma" class="val">—</span></div>
+        </div>
+        <div class="skewbar"><div id="skewbar-up" class="skewbar-up"></div><div id="skewbar-down" class="skewbar-down"></div></div>
+        <div class="signal-foot"><span id="sig-market">—</span><span id="sig-age" class="muted"></span></div>
+        <div class="signal-src"><span id="sig-source" class="muted"></span></div>
+      </section>
+
+      <!-- Risk caps -->
+      <section class="card">
+        <h2>Risk &amp; limites</h2>
+        <div class="gauge">
+          <div class="gauge-head"><span>Loss cap diário</span><span id="losscap-txt">—</span></div>
+          <div class="bar"><div id="losscap-bar" class="bar-fill bar-danger"></div></div>
+        </div>
+        <div class="gauge">
+          <div class="gauge-head"><span>Trades / dia</span><span id="tradescap-txt">—</span></div>
+          <div class="bar"><div id="tradescap-bar" class="bar-fill bar-accent"></div></div>
+        </div>
+        <div class="open-pos">
+          <h3>Posição aberta</h3>
+          <div id="open-pos" class="muted">nenhuma</div>
+        </div>
+        <div id="params" class="params"></div>
+      </section>
+    </div>
+
+    <!-- Equity curve -->
+    <section class="card">
+      <h2>Curva de P&L acumulado</h2>
+      <svg id="equity" viewBox="0 0 1000 240" preserveAspectRatio="none" class="equity"></svg>
+    </section>
+
+    <!-- Trades table -->
+    <section class="card">
+      <div class="card-head"><h2>Histórico de trades</h2><span id="trades-count" class="muted"></span></div>
+      <div class="table-wrap">
+        <table id="trades">
+          <thead><tr>
+            <th>Hora (UTC)</th><th>Lado</th><th>Move</th><th>Skew</th>
+            <th>Entry</th><th>Custo</th><th>P&L</th><th>Status</th><th>Mercado</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Logs -->
+    <section class="card">
+      <h2>Log da sessão</h2>
+      <pre id="logs" class="logs">—</pre>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <span>runtime: <code id="runtime-dir">—</code></span>
+    <span>refresh a cada <span id="refresh-sec">3</span>s · dados somente leitura</span>
+  </footer>
+
+  <script src="/static/dashboard.js"></script>
+</body>
+</html>

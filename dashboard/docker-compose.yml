@@ -1,0 +1,17 @@
+services:
+  btc5m-dashboard:
+    build: .
+    container_name: btc5m-dashboard
+    ports:
+      - "8787:8787"
+    environment:
+      HOST: "0.0.0.0"
+      PORT: "8787"
+      BTC5M_RUNTIME: "/app/runtime"
+      # BTC5M_CONFIG: "/bot/config/btc_5m_profiles.yaml"
+    # To monitor a LIVE bot, mount its runtime (and config) and drop --demo:
+    # command: ["python", "app.py", "--host", "0.0.0.0", "--port", "8787"]
+    # volumes:
+    #   - /path/to/5min-btc-polymarket/skills/btc-5m-live/runtime:/app/runtime:ro
+    #   - /path/to/5min-btc-polymarket/config:/bot/config:ro
+    restart: unless-stopped

@@ -1,0 +1,5 @@
+# Runtime artifacts are produced by the bot / demo at run time — not committed.
+runtime/*
+!runtime/.gitkeep
+__pycache__/
+*.pyc
