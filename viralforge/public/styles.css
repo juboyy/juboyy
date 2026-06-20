@@ -232,6 +232,21 @@ select { appearance: none; cursor: pointer;
 }
 @keyframes spin { to { transform: rotate(360deg); } }
 
+/* ---------- Biblioteca ---------- */
+.library { grid-column: 1 / -1; }
+.library code { background: var(--surface-3); padding: 1px 6px; border-radius: 6px; font-size: 12px; color: var(--accent-2); }
+.lib-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 4px; }
+@media (max-width: 900px) { .lib-grid { grid-template-columns: 1fr; } }
+.lib-title { font-size: 12px; color: var(--accent-2); font-weight: 700; margin: 0 0 11px; letter-spacing: -0.01em; }
+.chips { display: flex; flex-direction: column; gap: 7px; }
+.chip {
+  text-align: left; font-size: 12.5px; padding: 9px 12px; border-radius: 9px; cursor: pointer;
+  background: var(--surface-3); border: 1px solid var(--line); color: var(--text);
+  transition: border-color .15s, background .15s, transform .1s; line-height: 1.45;
+}
+.chip:hover { border-color: var(--accent); background: var(--accent-soft); transform: translateX(2px); }
+.chip .pat { display: block; color: var(--faint); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
+
 /* ---------- Footer ---------- */
 .foot { max-width: 1200px; margin: 10px auto 48px; padding: 0 24px; }
 .foot p { color: var(--faint); font-size: 12px; line-height: 1.6; }

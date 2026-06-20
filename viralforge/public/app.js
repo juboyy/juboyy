@@ -5,6 +5,7 @@ import {
   POSTING_WINDOWS,
   WEIGHTS,
 } from "./viralEngine.js";
+import { HOOKS, THREAD_TEMPLATES } from "./library.js";
 
 const $ = (id) => document.getElementById(id);
 
@@ -200,3 +201,31 @@ $("g-run").addEventListener("click", async () => {
     btn.textContent = "Gerar variações";
   }
 });
+
+// ===== BIBLIOTECA (hooks + templates) =====
+function loadIntoAnalyzer(text, format) {
+  $("a-text").value = text;
+  $("a-format").value = format;
+  runAnalyzer();
+  $("a-text").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function renderLibrary(el, items, getPat, getText, format) {
+  for (const item of items) {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "chip";
+    b.innerHTML = `<span class="pat">${escapeHtml(getPat(item))}</span>${escapeHtml(getText(item))}`;
+    b.addEventListener("click", () => loadIntoAnalyzer(item.text, format));
+    el.appendChild(b);
+  }
+}
+
+renderLibrary($("lib-hooks"), HOOKS, (h) => h.pattern, (h) => h.text, "single");
+renderLibrary(
+  $("lib-templates"),
+  THREAD_TEMPLATES,
+  (t) => t.name,
+  (t) => t.text.split("\n")[0] + " …",
+  "thread"
+);
