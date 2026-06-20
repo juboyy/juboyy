@@ -8,7 +8,7 @@ It reads the bot's `runtime/` artifacts (status, logs, trade results) and
 renders, with auto-refresh every 3s:
 
 - **Bot status** — running/stopped, PID, profile, uptime, live params
-- **Live signal** — BTC price & interval move, seconds-to-close, UP/DOWN skew,
+- **Live signal** — UP/DOWN CLOB ask, seconds-to-close, skew, spread, gamma,
   and an "entry window active" indicator
 - **KPIs** — P&L today / total, win rate, trades today, best/worst
 - **Risk & limits** — daily loss-cap usage and trades/day usage gauges,
@@ -126,3 +126,15 @@ Mount the bot's runtime directory to monitor a live session:
 This is monitoring/visualization tooling for an automated trading strategy.
 Trading involves risk of loss; nothing here is financial advice. Always run the
 bot in dry-run first and respect the configured risk caps.
+
+## Operating the bot safely
+
+Before running the upstream execution bot with real funds, read:
+
+- [`docs/SECURITY_AUDIT.md`](docs/SECURITY_AUDIT.md) — review of how the bot
+  handles your wallet key, dependencies, and network.
+- [`docs/SAFE_OPERATION.md`](docs/SAFE_OPERATION.md) — step-by-step runbook
+  (dedicated wallet, dependency pinning, dry-run validation, kill switch).
+- [`docs/env.example`](docs/env.example) — the exact env vars the runner reads.
+- [`docs/requirements.pinned.txt`](docs/requirements.pinned.txt) — pinned
+  dependency baseline (the upstream repo ships none).
