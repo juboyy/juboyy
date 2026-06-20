@@ -8,7 +8,7 @@ export function PnLValue({
   suffix = '',
 }: {
   value: number;
-  variant?: 'mono' | 'display' | 'headline' | 'body' | 'caption';
+  variant?: 'mono' | 'display' | 'title' | 'headline' | 'body' | 'caption';
   suffix?: string;
 }) {
   const color = value > 0 ? 'up' : value < 0 ? 'down' : 'muted';
