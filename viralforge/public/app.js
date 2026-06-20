@@ -72,6 +72,12 @@ function runAnalyzer() {
   tierEl.className = "gauge-tier " + (text.trim() ? lbl.cls : "");
   $("a-total").className = "gauge-num " + (text.trim() ? lbl.cls : "");
 
+  const gauge = document.querySelector(".gauge");
+  if (gauge) {
+    gauge.style.setProperty("--p", text.trim() ? result.total : 0);
+    gauge.dataset.tier = text.trim() ? lbl.cls : "";
+  }
+
   renderBreakdown($("a-breakdown"), result.breakdown);
 
   const box = $("a-suggestions");
