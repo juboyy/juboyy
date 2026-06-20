@@ -1,0 +1,35 @@
+# Run from repo root:
+#   docker compose -f quant-app/deploy/docker-compose.yml up --build
+services:
+  backend:
+    build:
+      context: ../..              # repo root
+      dockerfile: quant-app/deploy/Dockerfile
+    container_name: btc5m-backend
+    ports:
+      - "8787:8787"
+    environment:
+      HOST: "0.0.0.0"
+      PORT: "8787"
+      BTC5M_PROFILE: "conservative"
+      # REQUIRED before exposing publicly — control endpoints refuse without it:
+      BTC5M_API_TOKEN: "${BTC5M_API_TOKEN:-}"
+      BTC5M_RUNTIME: "/app/quant-app/engine/runtime"
+    volumes:
+      # Persist captured snapshots / runtime artifacts across restarts:
+      - btc5m_runtime:/app/quant-app/engine/runtime
+    restart: unless-stopped
+
+  dashboard:
+    image: python:3.12-slim
+    container_name: btc5m-dashboard
+    working_dir: /app/dashboard
+    command: ["python", "app.py", "--host", "0.0.0.0", "--port", "8788", "--demo"]
+    ports:
+      - "8788:8788"
+    volumes:
+      - ../../dashboard:/app/dashboard:ro
+    restart: unless-stopped
+
+volumes:
+  btc5m_runtime:

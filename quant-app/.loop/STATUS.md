@@ -34,6 +34,12 @@ mobile `npx tsc --noEmit` exit 0. All committed to `claude/quant-app-loop`.
 - **Iter 2** — all 9 gates GREEN. engine (70) + crypto (42) tests pass; mobile
   typechecks clean. Fixed a footgun: renamed `signal.py`→`signal_engine.py`
   (stdlib shadow). Baseline complete.
+- **Iter 3** — backend API (36 tests) + read-only public feeds/capture (23 tests).
+  Full suite: 171 passing. Backend boot + auth smoke verified locally.
+- **Iter 4 (deploy prep)** — `deploy/` Dockerfile + compose (backend API +
+  dashboard) and `mobile/vercel.json` (static web demo). Honest split: control
+  plane = container only (stateful + WebSocket); Vercel = read-only demo. Actual
+  external deploy gated on owner (this sandbox has no outbound network / Docker).
 
 ## Gated on owner (cannot be closed without you)
 - **BTC spot feed** for `momentum` (`04 §1`) — interface built; concrete live
