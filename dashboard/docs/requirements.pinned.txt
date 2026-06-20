@@ -1,0 +1,17 @@
+# Pinned dependency baseline for the upstream 5min-btc-polymarket runner.
+#
+# The upstream repo ships NO requirements.txt (unpinned = supply-chain risk,
+# see docs/SECURITY_AUDIT.md finding #1). Install these inside an isolated
+# container venv, VERIFY each package is the official one, then freeze:
+#
+#   pip install -r requirements.pinned.txt
+#   pip freeze > requirements.lock.txt     # commit the lock
+#
+# IMPORTANT: replace the >= floors with EXACT == pins of the versions you
+# audited, and prefer hash-locked installs via pip-compile / pip --require-hashes.
+# Before installing py-clob-client, confirm it resolves to the official
+# Polymarket project: https://github.com/Polymarket/py-clob-client
+
+py-clob-client>=0.17.0     # official Polymarket CLOB SDK — PIN exact + verify
+requests>=2.31.0           # pin exact after audit
+PyYAML>=6.0.1              # only needed if you load the YAML config directly
