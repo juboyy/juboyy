@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "name": "btc_5m_impulse_momentum_profiles",
+  "market": "polymarket_btc_updown_5m",
+  "equity_usd": null,
+  "strategy_reference": {
+    "style": "momentum_follow_through_into_close",
+    "entry_window_seconds_left_target": 120,
+    "entry_window_seconds_left_tolerance": 30,
+    "btc_move_usd_min": 70,
+    "btc_move_usd_max_reference": 100
+  },
+  "shared_rules": {
+    "execution_safety": {
+      "skip_if_quote_stale_sec_gt": 8,
+      "skip_if_spread_gt": 0.03,
+      "skip_if_top_ask_notional_usd_lt": 30
+    },
+    "session_timing": {
+      "min_entry_seconds_left": 60,
+      "exit_before_sec": 20
+    }
+  },
+  "profiles": {
+    "conservative": {
+      "description": "More stable mode: stricter filters and lower per-trade risk.",
+      "signal": { "threshold_price": 0.70 },
+      "sizing": {
+        "stake_usd": 5,
+        "risk_per_trade_pct_equity": 8,
+        "max_notional_usd": 8,
+        "daily_max_loss_pct": 10,
+        "max_trades_per_day": 12
+      },
+      "hedge": {
+        "enabled": true,
+        "trigger_side_price_gte": 0.95,
+        "trigger_seconds_left_lte": 45,
+        "hedge_notional_usd_min": 1,
+        "hedge_notional_usd_max": 2
+      },
+      "stop_loss": { "enabled": true, "stop_loss_pct_from_entry": 0.25 }
+    },
+    "aggressive": {
+      "description": "Higher frequency and higher risk mode.",
+      "signal": { "threshold_price": 0.70 },
+      "sizing": {
+        "stake_usd": 5,
+        "risk_per_trade_pct_equity": 15,
+        "max_notional_usd": 15,
+        "daily_max_loss_pct": 15,
+        "max_trades_per_day": 20
+      },
+      "hedge": {
+        "enabled": true,
+        "trigger_side_price_gte": 0.93,
+        "trigger_seconds_left_lte": 50,
+        "hedge_notional_usd_min": 1,
+        "hedge_notional_usd_max": 3
+      },
+      "stop_loss": { "enabled": true, "stop_loss_pct_from_entry": 0.30 }
+    }
+  }
+}
