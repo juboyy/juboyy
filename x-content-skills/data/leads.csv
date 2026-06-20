@@ -1,0 +1,6 @@
+nome,handle_x,canal_conteudo,nicho,horas_conteudo_morto,status,ultimo_contato,proximo_passo,notas
+# status: novo | dm_enviada | follow_up | corte_gratis_entregue | em_negociacao | fechado | perdido
+# Exemplos abaixo — substitua pelos seus prospects reais.
+João Exemplo,@joaoexemplo,Podcast IA Brasil,agentes de IA,40,novo,,enviar DM + 1 corte grátis,episódio sobre RAG tem 3 momentos virais
+Maria Founder,@mariafounder,Lives semanais SaaS,fintech IA,25,dm_enviada,2026-06-19,follow-up em 48h,respondeu morno; mandar corte pronto
+Pedro Builder,@pedrobuilds,YouTube build in public,dev tools,60,corte_gratis_entregue,2026-06-20,propor pacote 10 cortes,corte entregue rendeu boa tração
