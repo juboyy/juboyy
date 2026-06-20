@@ -1,0 +1,14 @@
+{
+  "name": "viralforge",
+  "version": "0.1.0",
+  "description": "Motor de viralidade para o X (Twitter) — regras determinísticas + Claude. Aumi.group.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.69.0",
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ViralForge — motor de viralidade para o X</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo">⚡</span>
+      <div>
+        <h1>ViralForge</h1>
+        <p class="tag">Motor de viralidade para o X · regras + Claude · <span class="aumi">aumi.group</span></p>
+      </div>
+    </div>
+    <div id="aiStatus" class="ai-status" title="Status da geração por IA">verificando…</div>
+  </header>
+
+  <main class="grid">
+    <!-- GERAR -->
+    <section class="panel">
+      <h2>Gerar posts otimizados</h2>
+      <p class="hint">Você dá os parâmetros, a IA escreve as variações e cada uma recebe um Viral Score.</p>
+
+      <label>Tema / assunto
+        <input id="g-topic" type="text" placeholder="Ex: por que agentes de IA com loops fechados falham" />
+      </label>
+
+      <label>Nicho (opcional)
+        <input id="g-niche" type="text" placeholder="Agentes de IA, tech, psyops, consciência, money, hacks…" />
+      </label>
+
+      <div class="row">
+        <label>Formato
+          <select id="g-format"></select>
+        </label>
+        <label>Janela
+          <select id="g-window"></select>
+        </label>
+        <label>Qtde
+          <select id="g-count">
+            <option>3</option><option selected>5</option><option>8</option>
+          </select>
+        </label>
+      </div>
+
+      <button id="g-run" class="btn-primary">Gerar variações</button>
+      <div id="g-error" class="error" hidden></div>
+      <div id="g-results" class="results"></div>
+    </section>
+
+    <!-- ANALISAR -->
+    <section class="panel">
+      <h2>Analisar um rascunho</h2>
+      <p class="hint">Cole um post e veja o Viral Score em tempo real (100% determinístico, sem IA).</p>
+
+      <div class="row">
+        <label>Formato
+          <select id="a-format"></select>
+        </label>
+        <label>Janela
+          <select id="a-window"></select>
+        </label>
+      </div>
+
+      <label>Post
+        <textarea id="a-text" rows="7" placeholder="Cole ou escreva seu post aqui…"></textarea>
+      </label>
+
+      <div class="score-card">
+        <div class="gauge">
+          <div id="a-total" class="gauge-num">0</div>
+          <div id="a-tier" class="gauge-tier">—</div>
+        </div>
+        <ul id="a-breakdown" class="breakdown"></ul>
+      </div>
+
+      <div id="a-suggestions" class="suggestions"></div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Viral Score = média ponderada de 8 parâmetros (hook 24% · emoção 15% · loop 15% · especificidade 12% · escaneabilidade 10% · higiene 10% · formato 8% · horário 6%). Nas variações geradas, o score final mistura 70% regras + 30% julgamento do Claude.</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
