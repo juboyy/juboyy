@@ -30,7 +30,7 @@ from typing import Dict, List, Optional
 
 from .contracts import MarketSnapshot, Position, RiskState
 from .config import Profile, get_profile
-from . import indicators, signal as signal_mod, risk as risk_mod, costs as costs_mod
+from . import indicators, signal_engine as signal_mod, risk as risk_mod, costs as costs_mod
 from .datasource import RecordedSource
 
 TRADING_DAYS_PER_YEAR = 252

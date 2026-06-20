@@ -20,7 +20,7 @@ from dataclasses import asdict
 
 from .contracts import MarketSnapshot
 from .config import get_profile
-from . import indicators, signal as signal_mod, risk as risk_mod, backtest as backtest_mod
+from . import indicators, signal_engine as signal_mod, risk as risk_mod, backtest as backtest_mod
 from .capture import CaptureRecorder, DEFAULT_PATH
 
 

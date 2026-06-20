@@ -14,13 +14,13 @@ library only for the core. See `engine/README.md`.
 
 from __future__ import annotations
 
-from . import contracts, indicators, signal, risk, sizing, costs, datasource, capture, backtest
+from . import contracts, indicators, signal_engine, risk, sizing, costs, datasource, capture, backtest
 from .config import Profile, get_profile, PROFILES
 
 __all__ = [
     "contracts",
     "indicators",
-    "signal",
+    "signal_engine",
     "risk",
     "sizing",
     "costs",
