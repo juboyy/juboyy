@@ -2,14 +2,22 @@
 demo.py — Generates realistic synthetic runtime artifacts so the dashboard
 can be demonstrated without a live bot.
 
-It writes the same files the real `5min-btc-polymarket` bot produces:
-  runtime/btc5m.meta.json, runtime/btc5m.pid,
-  runtime/btc5m_events.jsonl, runtime/btc5m_signal.json,
-  runtime/latest.log
+It writes the SAME files the real `5min-btc-polymarket` bot produces, in the
+same shape (see scripts/test_btc_5m_session_exit_sl.py and btc5m_ctl.sh):
+
+  runtime/btc5m.meta.json                 -> ctl.sh metadata (start ts, profile…)
+  runtime/btc5m.pid                       -> process id
+  runtime/btc5m_<profile>_<UTC>.log       -> ONE session report JSON each
+  runtime/latest.log                      -> points at the newest session log
+
+Each session report mirrors the runner's real schema: started_at, params,
+attempts[] (heartbeats with clob_up_ask / clob_down_ask / seconds_left /
+gamma_up / gamma_down / min_spread), opened{}, closed{},
+realized_cashflow_pnl_usdc, result, finished_at.
 
 Usage:
   python demo.py [--runtime DIR] [--profile conservative|aggressive]
-                 [--trades N] [--running]
+                 [--sessions N] [--running | --stopped]
 """
 
 from __future__ import annotations
@@ -18,7 +26,6 @@ import argparse
 import json
 import os
 import random
-import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -27,47 +34,107 @@ def _iso(dt):
     return dt.astimezone(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
-def gen_trade(ts, profile, threshold, stake):
-    side = random.choice(["UP", "DOWN"])
-    btc_move = round(random.uniform(60, 130), 1)
-    skew = round(random.uniform(0.55, 0.97), 3)
-    sl = random.randint(95, 145)
-    entry = round(random.uniform(0.58, 0.82), 3)
-    # Outcome: edge toward wins when move strong + skew aligned.
-    win_p = 0.50 + min(0.25, (btc_move - 70) / 240) + (skew - 0.6) * 0.3
-    win = random.random() < max(0.35, min(0.8, win_p))
-    cost = round(stake, 2)
-    if win:
-        pnl = round(cost * (1.0 / entry - 1.0) * random.uniform(0.7, 1.0), 3)
-        close_status = "settled_win"
-    else:
-        pnl = round(-cost * random.uniform(0.6, 1.0), 3)
-        close_status = "settled_loss"
-    slug = f"btc-updown-5m-{ts.strftime('%Y%m%d-%H%M')}"
-    return {
-        "ts": _iso(ts),
-        "profile": profile,
-        "result": "ok",
-        "opened": {
-            "side": side,
-            "market_slug": slug,
-            "cost_usdc": cost,
-            "open_tx": "0x" + "".join(random.choice("0123456789abcdef") for _ in range(12)),
-        },
-        "closed": {
-            "close_success": True,
-            "close_status": close_status,
-            "close_skipped": False,
-            "close_tx": "0x" + "".join(random.choice("0123456789abcdef") for _ in range(12)),
-        },
-        "realized_cashflow_pnl_usdc": pnl,
-        "btc_move_usd": btc_move,
-        "skew": skew,
-        "seconds_left_at_entry": sl,
-        "entry_price": entry,
-        "threshold_price": threshold,
-        "stake_usd": stake,
+def _tx():
+    return "0x" + "".join(random.choice("0123456789abcdef") for _ in range(12))
+
+
+def build_session_report(start, profile, threshold, stake):
+    """Produce one full session report matching the runner's output schema."""
+    slug = f"btc-updown-5m-{start.strftime('%Y%m%d-%H%M')}"
+    market_end = start + timedelta(minutes=5)
+
+    params = {
+        "profile": profile, "threshold": threshold, "stake_usd": stake,
+        "stop_loss_pct": 0.25 if profile == "conservative" else 0.30,
+        "exit_before_sec": 20, "min_entry_seconds_left": 60,
+        "entry_timeout_min": 60, "poll_sec": 5,
+        "close_retry_max": 3, "close_retry_delay_sec": 1.5, "execute": True,
     }
+
+    # Decide up front whether momentum carries one side over the threshold by
+    # the close (~60% of sessions do), then drift the gamma/asks accordingly.
+    entered = random.random() < 0.6
+    strong_up = random.random() < 0.5
+    target = round(random.uniform(threshold + 0.02, 0.92), 3) if entered \
+        else round(random.uniform(0.50, threshold - 0.03), 3)
+
+    attempts = []
+    sec = random.randint(180, 240)
+    g_strong = round(random.uniform(0.40, 0.55), 3)
+    steps = max(1, sec // 35)
+    step_i = 0
+    while sec > 25:
+        # Strong side trends toward `target` as the close approaches.
+        frac = step_i / max(1, steps)
+        g_strong = round(min(0.95, g_strong + (target - g_strong) * frac
+                             + random.uniform(-0.02, 0.02)), 3)
+        g_weak = round(max(0.03, 1 - g_strong + random.uniform(-0.02, 0.02)), 3)
+        g_up, g_dn = (g_strong, g_weak) if strong_up else (g_weak, g_strong)
+        up_ask = round(min(0.98, max(0.03, g_up + random.uniform(-0.02, 0.02))), 3)
+        dn_ask = round(min(0.98, max(0.03, g_dn + random.uniform(-0.02, 0.02))), 3)
+        attempts.append({
+            "ts": _iso(start + timedelta(seconds=240 - sec)),
+            "slug": slug, "status": "heartbeat",
+            "gamma_up": g_up, "gamma_down": g_dn,
+            "clob_up_ask": up_ask, "clob_down_ask": dn_ask,
+            "seconds_left": sec, "min_spread": round(random.uniform(0.005, 0.025), 3),
+        })
+        sec -= random.randint(20, 45)
+        step_i += 1
+
+    last = attempts[-1]
+    side = "UP" if strong_up else "DOWN"
+    entry = last["clob_up_ask"] if strong_up else last["clob_down_ask"]
+    entered = entry >= threshold
+
+    report = {
+        "started_at": _iso(start),
+        "params": params,
+        "attempts": attempts,
+    }
+
+    if not entered:
+        attempts.append({
+            "ts": _iso(start + timedelta(minutes=4, seconds=40)),
+            "slug": slug, "status": "skip_price_below_threshold",
+            "threshold": threshold, "clob_up_ask": last["clob_up_ask"],
+            "clob_down_ask": last["clob_down_ask"], "seconds_left": 30,
+        })
+        report["result"] = "no_entry_timeout"
+        report["finished_at"] = _iso(market_end)
+        return report, start
+
+    shares = round(stake / max(0.01, entry), 2)
+    cost = round(shares * entry, 2)
+    win_p = 0.50 + (entry - 0.7) * 0.4
+    win = random.random() < max(0.4, min(0.78, win_p))
+    if win:
+        close_price = round(min(1.0, entry + random.uniform(0.1, 0.3)), 3)
+        close_status, close_reason = "settled_win", "market_resolved_in_favor"
+    else:
+        close_price = round(max(0.0, entry - random.uniform(0.2, entry)), 3)
+        close_status, close_reason = "settled_loss", "stop_loss_or_adverse_resolution"
+    close_usdc = round(shares * close_price, 2)
+    pnl = round(close_usdc - cost, 3)
+
+    report["opened"] = {
+        "opened_at": _iso(start + timedelta(minutes=3)),
+        "market_slug": slug, "market_end_iso": _iso(market_end),
+        "side": side, "token_id": _tx(), "entry_price": entry,
+        "shares": shares, "cost_usdc": cost,
+        "open_order_id": _tx(), "open_tx": _tx(),
+    }
+    report["closed"] = {
+        "close_reason": close_reason,
+        "closed_at": _iso(market_end - timedelta(seconds=20)),
+        "close_success": True, "close_status": close_status,
+        "close_order_id": _tx(), "close_tx": _tx(),
+        "close_shares": shares, "close_usdc": close_usdc,
+    }
+    report["realized_cashflow_pnl_usdc"] = pnl
+    report["result"] = "done"
+    report["finished_at"] = _iso(market_end)
+    return report, start
 
 
 def main():
@@ -75,7 +142,7 @@ def main():
     ap.add_argument("--runtime", default=str(Path(__file__).parent / "runtime"))
     ap.add_argument("--profile", default="conservative",
                     choices=["conservative", "aggressive"])
-    ap.add_argument("--trades", type=int, default=18)
+    ap.add_argument("--sessions", "--trades", dest="sessions", type=int, default=16)
     ap.add_argument("--running", action="store_true", default=True)
     ap.add_argument("--stopped", dest="running", action="store_false")
     args = ap.parse_args()
@@ -84,79 +151,46 @@ def main():
     rt.mkdir(parents=True, exist_ok=True)
     random.seed()
 
-    threshold = 0.70
-    stake = 5.0
+    threshold, stake = 0.70, 5.0
     now = datetime.now(timezone.utc)
-    start = now - timedelta(hours=3, minutes=20)
+    start0 = now - timedelta(minutes=6 * args.sessions + 10)
 
-    # meta + pid
+    # Each 5m market => one session log file.
+    newest_log = None
+    t = start0
+    for _ in range(args.sessions):
+        report, sstart = build_session_report(t, args.profile, threshold, stake)
+        log_file = rt / f"btc5m_{args.profile}_{sstart.strftime('%Y%m%dT%H%M%S')}.log"
+        log_file.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+        newest_log = log_file
+        t += timedelta(minutes=6)
+        if t > now:
+            break
+
+    # ctl.sh metadata + pid
     meta = {
-        "start_ts": _iso(start),
+        "start_ts": _iso(start0),
         "pid": os.getpid() if args.running else 999999,
-        "profile": args.profile,
-        "threshold": threshold,
-        "stake_usd": stake,
+        "profile": args.profile, "threshold": threshold, "stake_usd": stake,
         "stop_loss_pct": 0.25 if args.profile == "conservative" else 0.30,
-        "exit_before_sec": 20,
-        "min_entry_seconds_left": 60,
-        "entry_timeout_min": 60,
-        "poll_sec": 5,
-        "execute": True,
-        "log_path": str(rt / "latest.log"),
+        "exit_before_sec": 20, "min_entry_seconds_left": 60,
+        "entry_timeout_min": 60, "poll_sec": 5, "execute": True,
+        "log_path": str(newest_log) if newest_log else None,
     }
     (rt / "btc5m.meta.json").write_text(json.dumps(meta, indent=2))
     (rt / "btc5m.pid").write_text(str(meta["pid"]))
 
-    # events spread across the session, every ~10 min
-    events = []
-    t = start + timedelta(minutes=8)
-    for _ in range(args.trades):
-        events.append(gen_trade(t, args.profile, threshold, stake))
-        t += timedelta(minutes=random.randint(8, 14))
-        if t > now:
-            break
-    with open(rt / "btc5m_events.jsonl", "w", encoding="utf-8") as fh:
-        for e in events:
-            fh.write(json.dumps(e) + "\n")
-
-    # live signal snapshot
-    sl = random.randint(40, 175)
-    up = round(random.uniform(0.40, 0.75), 3)
-    down = round(1 - up + random.uniform(-0.05, 0.05), 3)
-    signal = {
-        "ts": _iso(now),
-        "btc_price": round(random.uniform(98000, 104000), 1),
-        "btc_move_usd": round(random.uniform(20, 120), 1),
-        "seconds_left": sl,
-        "up_ask": up,
-        "down_ask": max(0.0, down),
-        "skew": round(max(up, down) / max(0.001, up + down), 3),
-        "market_slug": f"btc-updown-5m-{now.strftime('%Y%m%d-%H%M')}",
-        "in_entry_window": 60 <= sl <= 150,
-    }
-    (rt / "btc5m_signal.json").write_text(json.dumps(signal, indent=2))
-
-    # human log tail
-    lines = [f"[{_iso(start)}] session start profile={args.profile} execute=True"]
-    for e in events[-12:]:
-        o = e["opened"]
-        lines.append(
-            f"[{e['ts']}] ENTER {o['side']} move=${e['btc_move_usd']} "
-            f"skew={e['skew']} sl={e['seconds_left_at_entry']}s "
-            f"cost={o['cost_usdc']} -> pnl={e['realized_cashflow_pnl_usdc']}"
-        )
-    lines.append(json.dumps(events[-1]))
-    log_file = rt / f"btc5m_{args.profile}_{start.strftime('%Y%m%dT%H%M%S')}.log"
-    log_file.write_text("\n".join(lines) + "\n")
+    # latest.log -> newest session
     latest = rt / "latest.log"
-    try:
-        if latest.exists() or latest.is_symlink():
-            latest.unlink()
-        latest.symlink_to(log_file.name)
-    except OSError:
-        latest.write_text("\n".join(lines) + "\n")
+    if newest_log:
+        try:
+            if latest.exists() or latest.is_symlink():
+                latest.unlink()
+            latest.symlink_to(newest_log.name)
+        except OSError:
+            latest.write_text(newest_log.read_text())
 
-    print(f"demo data written to {rt} ({len(events)} trades, running={args.running})")
+    print(f"demo data written to {rt} ({args.sessions} sessions, running={args.running})")
 
 
 if __name__ == "__main__":

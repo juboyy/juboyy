@@ -106,26 +106,37 @@ function renderSummary(s) {
 
 function renderSignal(sig) {
   const banner = $("signal-window");
+  const ids = ["sig-up","sig-down","sig-sl","sig-skew","sig-spread","sig-gamma"];
   if (!sig) {
     banner.textContent = "sem sinal recente";
     banner.className = "signal-banner idle";
-    ["sig-btc","sig-move","sig-sl","sig-skew","sig-up","sig-down"].forEach(i => $(i).textContent = "—");
+    ids.forEach(i => $(i).textContent = "—");
     $("sig-market").textContent = "—";
     $("sig-age").textContent = "";
+    $("sig-source").textContent = "";
     $("skewbar-up").style.width = "50%"; $("skewbar-down").style.width = "50%";
     return;
   }
   const armed = !!sig.in_entry_window;
   banner.textContent = armed ? "🎯 JANELA DE ENTRADA ATIVA" : "monitorando…";
   banner.className = "signal-banner " + (armed ? "armed" : "idle");
-  $("sig-btc").textContent = sig.btc_price != null ? "$" + Number(sig.btc_price).toLocaleString() : "—";
-  $("sig-move").textContent = sig.btc_move_usd != null ? "$" + Number(sig.btc_move_usd).toFixed(0) : "—";
-  $("sig-sl").textContent = sig.seconds_left != null ? sig.seconds_left + "s" : "—";
-  $("sig-skew").textContent = sig.skew != null ? (Number(sig.skew)*100).toFixed(0) + "%" : "—";
   $("sig-up").textContent = sig.up_ask != null ? Number(sig.up_ask).toFixed(2) : "—";
   $("sig-down").textContent = sig.down_ask != null ? Number(sig.down_ask).toFixed(2) : "—";
+  $("sig-sl").textContent = sig.seconds_left != null ? sig.seconds_left + "s" : "—";
+  $("sig-skew").textContent = sig.skew != null ? (Number(sig.skew)*100).toFixed(0) + "%" : "—";
+  $("sig-spread").textContent = sig.min_spread != null ? Number(sig.min_spread).toFixed(3) : "—";
+  $("sig-gamma").textContent = (sig.gamma_up != null && sig.gamma_down != null)
+    ? `${Number(sig.gamma_up).toFixed(2)} / ${Number(sig.gamma_down).toFixed(2)}` : "—";
   $("sig-market").textContent = sig.market_slug || "—";
   $("sig-age").textContent = sig.age_sec != null ? `há ${sig.age_sec}s` : "";
+
+  // Be explicit about data freshness: live hook vs. last completed session.
+  if (sig.source === "session_report") {
+    const extra = sig.last_result ? ` · último: ${sig.last_result}` : "";
+    $("sig-source").textContent = `fonte: última sessão concluída${extra}`;
+  } else {
+    $("sig-source").textContent = "fonte: heartbeat ao vivo";
+  }
 
   const up = Number(sig.up_ask)||0, down = Number(sig.down_ask)||0, tot = up+down || 1;
   $("skewbar-up").style.width = (up/tot*100) + "%";

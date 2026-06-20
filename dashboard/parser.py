@@ -169,12 +169,97 @@ class RuntimeReader:
 
     # -- live signal -------------------------------------------------------
     def signal(self):
+        # Fast path: a heartbeat file written live by the bot (opt-in hook).
         sig = _read_json(self.dir / "btc5m_signal.json")
         if sig:
             sig = dict(sig)
             sig["age_sec"] = self._age(sig.get("ts"))
             return sig
+        # Native path: derive the latest signal from the newest session report's
+        # `attempts` heartbeat array (what the runner actually writes).
+        report, mtime = self._newest_report()
+        if report:
+            return self._signal_from_report(report, mtime)
         return None
+
+    def _newest_report(self):
+        """Return (report_dict, file_mtime) for the most recently modified
+        session log that contains a parseable report JSON."""
+        candidates = []
+        latest = self.dir / "latest.log"
+        if latest.exists():
+            candidates.append(latest)
+        candidates += sorted(
+            self.dir.glob("btc5m_*.log"),
+            key=lambda p: p.stat().st_mtime if p.exists() else 0,
+            reverse=True,
+        )
+        seen = set()
+        for log in candidates:
+            try:
+                real = log.resolve()
+            except OSError:
+                real = log
+            if real in seen:
+                continue
+            seen.add(real)
+            try:
+                text = log.read_text(encoding="utf-8", errors="ignore")
+                mtime = log.stat().st_mtime
+            except OSError:
+                continue
+            objs = _extract_json_objects(text)
+            for obj in reversed(objs):
+                if "attempts" in obj or "opened" in obj or "result" in obj:
+                    return obj, mtime
+        return None, None
+
+    @staticmethod
+    def _last_heartbeat(report):
+        atts = report.get("attempts") or []
+        # Prefer a full 'heartbeat' (has gamma + clob asks), newest first.
+        for att in reversed(atts):
+            if att.get("status") == "heartbeat":
+                return att
+        # Fall back to any skip entry that still carries price/seconds info.
+        for att in reversed(atts):
+            if att.get("status") in ("skip_price_below_threshold",
+                                     "skip_too_late_to_enter"):
+                return att
+        return atts[-1] if atts else {}
+
+    def _signal_from_report(self, report, mtime):
+        hb = self._last_heartbeat(report)
+        up = hb.get("clob_up_ask")
+        dn = hb.get("clob_down_ask")
+        skew = None
+        try:
+            if up is not None and dn is not None and (up + dn) > 0:
+                skew = round(max(up, dn) / (up + dn), 3)
+        except TypeError:
+            skew = None
+        ts = hb.get("ts") or report.get("finished_at") or report.get("started_at")
+        result = report.get("result")
+        opened = report.get("opened") or {}
+        sl = hb.get("seconds_left")
+        return {
+            "ts": ts,
+            "up_ask": up,
+            "down_ask": dn,
+            "gamma_up": hb.get("gamma_up"),
+            "gamma_down": hb.get("gamma_down"),
+            "min_spread": hb.get("min_spread"),
+            "seconds_left": sl,
+            "skew": skew,
+            "market_slug": hb.get("slug") or opened.get("market_slug"),
+            "in_entry_window": bool(sl is not None and 60 <= sl <= 150),
+            "last_result": result,
+            "last_side": opened.get("side"),
+            # File-based snapshot: age reflects how stale the latest session is.
+            "age_sec": self._age(ts) if ts else (
+                max(0, int(_utcnow().timestamp() - mtime)) if mtime else None),
+            "source": "session_report",
+        }
 
     def _age(self, ts):
         dt = _parse_ts(ts)
@@ -234,34 +319,52 @@ class RuntimeReader:
         m = re.search(r"btc5m_([a-z]+)_", name)
         return m.group(1) if m else None
 
-    @staticmethod
-    def _normalize_trade(r):
+    @classmethod
+    def _normalize_trade(cls, r):
         opened = r.get("opened") or {}
         closed = r.get("closed") or {}
+        params = r.get("params") or {}
         pnl = r.get("realized_cashflow_pnl_usdc")
         try:
             pnl = float(pnl) if pnl is not None else None
         except (TypeError, ValueError):
             pnl = None
+
+        # Timestamp: prefer explicit ts, then the real runner's report keys.
+        ts = (r.get("ts") or r.get("finished_at") or opened.get("opened_at")
+              or r.get("started_at"))
+
+        # Derive entry context from the heartbeat closest to entry, if any.
+        hb = cls._last_heartbeat(r)
+        up, dn = hb.get("clob_up_ask"), hb.get("clob_down_ask")
+        skew = r.get("skew")
+        if skew is None and up is not None and dn is not None and (up + dn):
+            skew = round(max(up, dn) / (up + dn), 3)
+        seconds_left = r.get("seconds_left_at_entry")
+        if seconds_left is None:
+            seconds_left = hb.get("seconds_left")
+
         return {
-            "ts": r.get("ts"),
-            "profile": r.get("profile"),
+            "ts": ts,
+            "profile": r.get("profile") or params.get("profile"),
             "result": r.get("result"),
             "side": opened.get("side"),
-            "market_slug": opened.get("market_slug"),
+            "market_slug": opened.get("market_slug") or hb.get("slug"),
             "cost_usdc": opened.get("cost_usdc"),
             "open_tx": opened.get("open_tx"),
+            "close_reason": closed.get("close_reason"),
             "close_success": closed.get("close_success"),
             "close_status": closed.get("close_status"),
             "close_skipped": closed.get("close_skipped"),
             "close_tx": closed.get("close_tx"),
             "pnl_usdc": pnl,
             "btc_move_usd": r.get("btc_move_usd"),
-            "skew": r.get("skew"),
-            "seconds_left_at_entry": r.get("seconds_left_at_entry"),
-            "entry_price": r.get("entry_price"),
-            "threshold_price": r.get("threshold_price"),
-            "stake_usd": r.get("stake_usd"),
+            "skew": skew,
+            "seconds_left_at_entry": seconds_left,
+            "entry_price": opened.get("entry_price", r.get("entry_price")),
+            "shares": opened.get("shares"),
+            "threshold_price": r.get("threshold_price") or params.get("threshold"),
+            "stake_usd": r.get("stake_usd") or params.get("stake_usd"),
         }
 
     # -- aggregated KPIs ---------------------------------------------------

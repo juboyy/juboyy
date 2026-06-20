@@ -51,18 +51,54 @@ python app.py \
 
 Environment variables work too: `BTC5M_RUNTIME`, `BTC5M_CONFIG`, `PORT`, `HOST`.
 
+## How the bot feeds the dashboard
+
+The execution bot writes; the dashboard reads. **No bot modification is
+required** — the dashboard understands the runner's native output directly.
+
 ### Files the dashboard reads
 
 | File | Produced by | Used for |
 |------|-------------|----------|
-| `btc5m.meta.json`, `btc5m.pid` | `btc5m_ctl.sh start` | status / profile / params |
-| `btc5m_<profile>_<UTC>.log`, `latest.log` | session runner | log tail + tail-JSON trade results |
-| `btc5m_events.jsonl` *(optional)* | streaming hook | richer per-trade history |
-| `btc5m_signal.json` *(optional)* | heartbeat hook | live signal panel |
+| `btc5m.meta.json`, `btc5m.pid` | `btc5m_ctl.sh start` | status / profile / params / uptime |
+| `btc5m_<profile>_<UTC>.log` | session runner (one JSON report per 5m session) | trades, P&L, and the live-signal panel |
+| `latest.log` | `btc5m_ctl.sh` | newest session / log tail |
 
-The two optional files give the nicest experience. If they're absent, the
-dashboard falls back to scanning the per-session `.log` files for the trade
-JSON described in `btc5m_latest_report.py`.
+Each 5-minute session ends with one JSON report (`started_at`, `params`,
+`attempts[]`, `opened`, `closed`, `realized_cashflow_pnl_usdc`, `result`,
+`finished_at`). The dashboard:
+
+- builds the **trade history & P&L** from each session's `opened`/`closed`/`pnl`;
+- derives the **live signal panel** (UP/DOWN CLOB ask, seconds-to-close, skew,
+  spread, gamma) from the **latest** session's `attempts[]` heartbeats.
+
+Because the runner only emits its report **at the end of each session**, the
+signal panel reflects the *most recently completed* 5-minute session and labels
+itself "fonte: última sessão concluída". For markets this short that's
+effectively live (updates each session). The dashboard shows the heartbeat's
+`seconds_left` and an "entry window active" flag when 60–150s remain.
+
+### Optional: true real-time ticks (live hook)
+
+For a second-by-second countdown *during* a session, have the runner also drop a
+heartbeat snapshot each poll. Add ~3 lines to its monitoring loop:
+
+```python
+# inside the heartbeat loop of test_btc_5m_session_exit_sl.py
+import json, os, time
+with open(os.path.join(RUNTIME_DIR, "btc5m_signal.json"), "w") as fh:
+    json.dump({
+        "ts": ts_utc(), "slug": slug,
+        "clob_up_ask": up_ask, "clob_down_ask": dn_ask,
+        "gamma_up": g_up, "gamma_down": g_dn,
+        "seconds_left": sec_left, "min_spread": min_spread,
+    }, fh)
+```
+
+If `btc5m_signal.json` is present the dashboard uses it (labelled "fonte:
+heartbeat ao vivo") and ignores the session-report fallback. A
+`btc5m_events.jsonl` append-only file (one trade record per line) is likewise
+honored if present, useful for durable history if you rotate old session logs.
 
 ## Docker
 
