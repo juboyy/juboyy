@@ -61,6 +61,27 @@ continua 100% funcional** — só a aba de geração por IA fica desabilitada.
 
 ---
 
+## Geração pelo SEU Claude Code (sem API key)
+
+Em vez de chamar a API da Anthropic, o ViralForge pode rotear a geração para o seu
+**Claude Code** local (CLI `claude`, headless) — usando a sua própria autenticação,
+sem `ANTHROPIC_API_KEY` e sem depender de egress para a API.
+
+Requisitos: ter o CLI `claude` instalado e logado na máquina onde o servidor roda.
+
+```bash
+cd viralforge
+npm install
+PROVIDER=claude-code npm start      # ou defina PROVIDER=claude-code no .env
+```
+
+- `/api/generate` passa a invocar `claude -p ... --output-format json` e parseia o resultado.
+- Opcional: `VIRAL_CC_MODEL` escolhe o modelo (ex: `opus`); vazio = padrão da sua sessão.
+- ⚠️ **Só funciona localmente** — funções serverless da Vercel não executam o CLI. Em
+  produção (Vercel) use `PROVIDER=anthropic` com a `ANTHROPIC_API_KEY`.
+
+---
+
 ## Arquitetura
 
 ```
