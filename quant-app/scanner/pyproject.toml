@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quant-scanner"
+version = "1.0.0"
+description = "OFFLINE, advisory convexity / resolution-edge scanner for Polymarket (pure-stdlib core)."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+# The deterministic core needs none of these. `claude` enables the optional
+# OFFLINE ClaudeAnalyzer; `dev` is the test runner.
+claude = ["anthropic>=0.40"]
+dev = ["pytest>=7.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-q --import-mode=importlib"
+pythonpath = [".."]
