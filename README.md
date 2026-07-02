@@ -1,211 +1,86 @@
-<div align="center">
+# João Soares
 
-![Header](https://capsule-render.vercel.app/api?type=waving&color=0:E87722,100:F4A261&height=200&section=header&text=João%20Rafael&fontSize=70&fontColor=fff&animation=fadeIn&fontAlignY=35)
+Fundador da **[AUMI Group](https://aumi.group)** — consultoria AI Native.
+Squad como assinatura mensal. Spec antes de código, revisão sênior em 100% das entregas.
 
-# João Rafael Soares
+```
+Caso anchor · logística global · NDA
+40+ integrações B2B · 24 meses parados · AUMI entregou em 3 · R$ 1M evitado
+```
 
-**Software Engineer · AI Systems Architect · Pet Tech Founder**
-
-*Construo sistemas que resolvem problemas reais — arquitetura sólida, código limpo, impacto mensurável.*
-
-[![🇧🇷 Português](https://img.shields.io/badge/🇧🇷_Português-E87722?style=for-the-badge)](./README.md)
-[![🇺🇸 English](https://img.shields.io/badge/🇺🇸_English-1A1A1A?style=for-the-badge)](./README.en.md)
-
-<br>
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jo%C3%A3o-soares-716400229)
-[![Email](https://img.shields.io/badge/Email-E87722?style=for-the-badge&logo=gmail&logoColor=white)](mailto:joao@aumi.group)
-[![Research Wiki](https://img.shields.io/badge/AMIAU_Research_Wiki-1A1A1A?style=for-the-badge&logo=readthedocs&logoColor=E87722)](https://juboyy.github.io/research-wiki/)
-[![Profile Views](https://komarev.com/ghpvc/?username=juboyy&style=for-the-badge&color=E87722&label=PROFILE+VIEWS)](https://github.com/juboyy)
-
-</div>
+10+ anos em Oracle Cloud, integrações bancárias BR (BACEN/ANS), sistemas enterprise.
+Cunhei **AI Native** como disciplina de operação — não ferramenta.
 
 ---
 
-## 🧭 Visão Geral
+## Ecossistema
 
-> Engenheiro de software focado em **sistemas de IA em produção**, **fintech** e **pet tech**. Atuo do design de arquitetura ao deploy, priorizando confiabilidade, escala e clareza.
-
----
-
-## 💼 Áreas de Atuação
-
-| Domínio | Capacidades |
-|---|---|
-| 🔧 **Engenharia de Software** | Arquitetura distribuída, código limpo, sistemas escaláveis |
-| 🤖 **IA & Automação** | Agentes autônomos, RAG, orquestração multi-agent, pipelines |
-| 🌐 **Produtos Digitais** | Ciclo completo: do discovery ao deploy |
-| 📊 **Fintech & Data** | Sistemas financeiros, análise de dados, automação |
-| 🐾 **Pet Tech** | Comunicação interespécie, wearables, IA aplicada a animais |
-
----
-
-## 🚀 Projetos Selecionados
-
-> 🔒 = repositório privado/confidencial (sob NDA, sem links).
-
-| Projeto | Descrição | Stack |
+| | O que é | Link |
 |---|---|---|
-| 🔒 **Paganini One** | Plataforma **Agent-as-a-Service** (BYOK) — orquestração de agentes white-label, multi-tenant | `TypeScript` `AI Agents` `SaaS` |
-| 🔒 **Cronos** | Engine de **inteligência multi-agente** para análise de opinião pública e simulação preditiva | `TypeScript` `Multi-Agent` `Simulação` |
-| 🔒 **Gateway de Pagamentos** | API de gateway para débitos veiculares — integração bancária, billing recorrente e processamento assíncrono | `Ruby on Rails` `Stripe` `Sidekiq` |
-| 🔒 **Aya OS** | **Sistema operacional agêntico** para microempresas financeiras | `TypeScript` `AI Agents` `Fintech` |
-| 🔒 **Revenue OS** | Plataforma de **Revenue Operations** — automação e orquestração de receita | `TypeScript` `RevOps` |
-| 🔒 **Meta Ops** | Dashboard de **métricas avançadas de Facebook Ads** (Hook Rate, Connect Rate, retenção de vídeo, performance de criativos) | `TypeScript` `Analytics` |
-| 🔒 **OpenClaw** | Ecossistema de **agentes autônomos** — Prompts 2.0 com arquitetura de swarm | `Agent Framework` `Prompt Eng` |
-| 🔒 **OraCLI** | Workspace de agente — núcleo de memória, skills e scripts (SOUL) | `CLI` `Agents` |
-| 🔒 **Paganini AIOS** | Núcleo de **sistema operacional de IA** (runtime de agentes) | `Python` `AI OS` |
-| 🔒 **NeuroForge AI** | Plataforma de IA / forja de modelos | `TypeScript` `AI` |
-| [**AMIAU Research Wiki**](https://juboyy.github.io/research-wiki/) | Revista científica + wiki técnica sobre consciência, IA, animais, IoT e wearables | `Docusaurus` `AutoResearchClaw` |
-| [**SpentAI**](https://github.com/juboyy/spentai-showcase) | Controle de gastos enviando uma simples mensagem de texto | `TypeScript` `IA` |
-| [**FinLearn Vista**](https://github.com/juboyy/finlearn-vista) | Alternativa ao NotebookLM voltada para educação em Fintech | `Python` `IA` |
+| **AUMI Group** | Consultoria AI Native · squad assinatura R$4.997 → R$98.889 | [aumi.group](https://aumi.group) |
+| **MIND** | Agente desktop open source · AGPL v3 · Rust + Tauri | [aumi-group/MIND](https://github.com/aumi-group/MIND) |
+| **AUMI Blog** | Método técnico em público · 10 posts (EEAT stack) | [aumi.group/blog](https://aumi.group/blog) |
+| **Assessment** | Diagnóstico gratuito antes de qualquer proposta | [aumi.group/assessment](https://aumi.group/assessment.html) |
+
+Estrutura societária + biografia em [aumi.group/sobre/joao-soares](https://aumi.group/sobre/joao-soares/) · [Wikidata Q140374437](https://www.wikidata.org/wiki/Q140374437).
 
 ---
 
-## 🛠️ Stack Tecnológico
+## Building right now
 
-#### 💻 Linguagens
+- **AUMI Brain** · cockpit interno que descobre → age → mede, 358 nodes indexados em pgvector, enrichment por Groq llama-3.3-70b, publisher X próprio
+- **MIND v0.1 alpha** · agente desktop com whisper local, memória vault em git, ambiente isolado por cliente
+- **Pesquisa em produção** · blindagem contra prompt injection, criptografia pós-quântica (Kyber/Dilithium), red team contínuo
 
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
-![Java](https://img.shields.io/badge/Java-007396?style=flat-square&logo=openjdk&logoColor=white)
-![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
-![Swift](https://img.shields.io/badge/Swift-FA7343?style=flat-square&logo=swift&logoColor=white)
-![C](https://img.shields.io/badge/C-A8B9CC?style=flat-square&logo=c&logoColor=black)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
-![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
-![Ruby](https://img.shields.io/badge/Ruby-CC342D?style=flat-square&logo=ruby&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat-square&logo=php&logoColor=white)
-![Scala](https://img.shields.io/badge/Scala-DC322F?style=flat-square&logo=scala&logoColor=white)
-![Elixir](https://img.shields.io/badge/Elixir-4B275F?style=flat-square&logo=elixir&logoColor=white)
-![Dart](https://img.shields.io/badge/Dart-0175C2?style=flat-square&logo=dart&logoColor=white)
-![R](https://img.shields.io/badge/R-276DC3?style=flat-square&logo=r&logoColor=white)
-![Solidity](https://img.shields.io/badge/Solidity-363636?style=flat-square&logo=solidity&logoColor=white)
-![Bash](https://img.shields.io/badge/Bash-4EAA25?style=flat-square&logo=gnubash&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-CC2927?style=flat-square&logo=postgresql&logoColor=white)
-
-#### 🎨 Frontend
-
-![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white)
-![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
-![Svelte](https://img.shields.io/badge/Svelte-FF3E00?style=flat-square&logo=svelte&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/Tailwind-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
-![Sass](https://img.shields.io/badge/Sass-CC6699?style=flat-square&logo=sass&logoColor=white)
-![Redux](https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=redux&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
-
-#### ⚙️ Backend
-
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
-![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=flat-square&logo=nestjs&logoColor=white)
-![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
-![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white)
-![Rails](https://img.shields.io/badge/Rails-CC0000?style=flat-square&logo=rubyonrails&logoColor=white)
-![Laravel](https://img.shields.io/badge/Laravel-FF2D20?style=flat-square&logo=laravel&logoColor=white)
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
-![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white)
-
-#### 🤖 IA / ML
-
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
-![Keras](https://img.shields.io/badge/Keras-D00000?style=flat-square&logo=keras&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![LLMs · RAG · Agents](https://img.shields.io/badge/LLMs%20·%20RAG%20·%20Agents-E87722?style=flat-square&logo=probot&logoColor=white)
-
-#### 🗄️ Bancos de Dados
-
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
-![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?style=flat-square&logo=supabase&logoColor=white)
-![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
-![Elasticsearch](https://img.shields.io/badge/Elasticsearch-005571?style=flat-square&logo=elasticsearch&logoColor=white)
-
-#### ☁️ DevOps & Cloud
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonwebservices&logoColor=white)
-![GCP](https://img.shields.io/badge/GCP-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
-![Azure](https://img.shields.io/badge/Azure-0078D4?style=flat-square&logo=microsoftazure&logoColor=white)
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=flat-square&logo=terraform&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=flat-square&logo=nginx&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=flat-square&logo=linux&logoColor=black)
+Sigo publicando o processo em [blog](https://aumi.group/blog) e [X @blzzjao](https://x.com/blzzjao).
 
 ---
 
-## 📊 Domínio Técnico
+## Onde consulto
 
-<div align="center">
+Setores onde o custo de errar não cabe na conta:
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api?username=juboyy&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&rank_icon=percentile&line_height=28&custom_title=Overview&bg_color=0D1117&title_color=E87722&icon_color=F4A261&text_color=C9D1D9">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api?username=juboyy&show_icons=true&theme=default&hide_border=true&include_all_commits=true&count_private=true&rank_icon=percentile&line_height=28&custom_title=Overview&bg_color=FFFFFF&title_color=E87722&icon_color=F4A261&text_color=333333">
-  <img src="https://github-readme-stats.vercel.app/api?username=juboyy&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true&rank_icon=percentile&line_height=28&custom_title=Overview&bg_color=0D1117&title_color=E87722&icon_color=F4A261&text_color=C9D1D9" alt="GitHub Stats">
-</picture>
+- **Financeiro & bancos** · BACEN compliance, integração legada (EDI/sFTP), trilha auditável
+- **SaaS B2B** · arquitetura AI Native from scratch, migração de squad tradicional
+- **Setor público** · LAI, soberania de dado, stack aberto auto-hospedado
+- **Saúde** · ANS + LGPD, isolamento por cliente, auditoria append-only
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=juboyy&layout=donut&theme=radical&hide_border=true&langs_count=12&count_private=true&custom_title=Domínio%20de%20Linguagens&bg_color=0D1117&title_color=E87722&text_color=C9D1D9&hide=html,css">
-  <source media="(prefers-color-scheme: light)" srcset="https://github-readme-stats.vercel.app/api/top-langs/?username=juboyy&layout=donut&theme=default&hide_border=true&langs_count=12&count_private=true&custom_title=Domínio%20de%20Linguagens&bg_color=FFFFFF&title_color=E87722&text_color=333333&hide=html,css">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=juboyy&layout=donut&theme=radical&hide_border=true&langs_count=12&count_private=true&custom_title=Domínio%20de%20Linguagens&bg_color=0D1117&title_color=E87722&text_color=C9D1D9&hide=html,css" alt="Top Languages">
-</picture>
-
-</div>
+Áreas de fluência técnica: agentes autônomos em produção, RAG estruturado, orquestração multi-agente, brain corporativo (memória de agente), red team de LLM, engenharia de contexto, MLOps completo, stack aberto vs cloud fechado.
 
 ---
 
-## 🧠 Princípios de Engenharia
+## Selected work
 
-> **80% planejamento · 20% execução**
+Alguns projetos são NDA. Sem links quando o cliente não autorizou.
 
-- PRD antes de código
-- Testes antes de deploy
-- Documentação antes de reunião
-- Reduzir entropia, não adicionar ruído
-
----
-
-## 🌱 Em Andamento
-
-- 🔬 Explorando **agentes autônomos** e **orquestração multi-agent**
-- 🏗️ Construindo **Eliza** — extensão digital sem limites
-- 📚 Estudando **Directional Prompting** e **engenharia de sistemas de IA**
-- 🐾 Desenvolvendo **AMIAU** — ponte entre humanos, animais e IA
+| Projeto | Descrição | Estado |
+|---|---|---|
+| **MIND** | Agente desktop open source · Rust + Tauri · AGPL v3 | Alpha público |
+| **AUMI Content Engine** | Motor de conteúdo com clustering LLM + persona própria | Produção interna |
+| **Caso Logística Global** | 40+ integrações B2B em 3 meses após 24m parados | Entregue (NDA) |
+| **Paganini One** | Agent-as-a-Service BYOK multi-tenant | Privado |
+| **Cronos** | Engine multi-agente para simulação preditiva | Privado |
+| **AMIAU** | Interface humano-animal + wearables | Pesquisa |
 
 ---
 
-## 📫 Contato
+## Método (curto)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jo%C3%A3o-soares-716400229)
-[![Twitter/X](https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white)](https://twitter.com/juboyy)
-[![Email](https://img.shields.io/badge/Email-E87722?style=for-the-badge&logo=gmail&logoColor=white)](mailto:joao@aumi.group)
+1. **Spec assinada** antes de código. Sem spec, sem sprint.
+2. **Teste obrigatório** em toda entrega. Cobertura mínima definida no contrato.
+3. **Revisão sênior** em 100% dos PRs. Orquestrador humano assina o delivery.
+4. **Ambiente isolado por cliente.** Dados não treinam modelo de terceiros.
+5. **Vault de memória em git.** Sem vendor lock-in. Se AUMI sumir, o cliente fica com tudo.
+
+Modelo é model-agnostic (Claude, Gemini, Llama, Qwen). Detalhe do método em [O que é AI Native](https://aumi.group/blog/o-que-e-ai-native/) e [Agentes de IA em produção](https://aumi.group/blog/agentes-de-ia-em-producao/).
 
 ---
 
-<div align="center">
+## Contato
 
-⭐ **Se curtiu algum projeto, deixa uma star!**
+- **Consultoria AUMI** · [joao@aumi.group](mailto:joao@aumi.group) · [assessment gratuito](https://aumi.group/assessment.html)
+- **LinkedIn** · [joão-soares](https://www.linkedin.com/in/joão-soares-716400229/)
+- **X** · [@blzzjao](https://x.com/blzzjao)
+- **GitHub** · você está aqui
 
-<sub>*"Extensões protegem o que estendem."*</sub>
-
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:F4A261,100:E87722&height=120&section=footer)
-
-</div>
+<sub>Localização: São Paulo, Brasil · Fuso: BRT (UTC-3)</sub>
