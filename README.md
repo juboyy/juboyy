@@ -213,7 +213,7 @@ Publico o processo em [X @blzzjao](https://x.com/blzzjao) e [blog AUMI](https://
 
 <div align="center">
 
-<img src="./assets/neural.svg" alt="neural pulse animation" width="100%" />
+<img src="./assets/ascii.svg" alt="ascii banner + wave + matrix rain" width="100%" />
 
 </div>
 
