@@ -180,7 +180,7 @@ Não listo tudo que já toquei — listo o que uso todo dia:
 | **Linguagens** | TypeScript · Python · Rust · SQL · Ruby |
 | **Frontend** | Next.js 15 · React · Tailwind · SVG/Canvas |
 | **Backend** | Node.js · FastAPI · Rails · Deno · Postgres (Neon) · Redis |
-| **IA** | Claude Sonnet 5 · Groq (Llama 3.3) · Whisper local · pgvector · LangGraph · Ollama |
+| **IA** | Claude Sonnet 5 · Groq (Llama 3.3) · Whisper local · LangGraph · Ollama |
 | **Fine-tuning** | SFT · GRPO/RLHF · Qwen · LoRA |
 | **Infra** | Vercel · GitHub Actions · Docker · Tailscale · systemd na VPS |
 | **Automação** | Bird CLI · yt-dlp · Playwright · MCP servers |
@@ -203,9 +203,9 @@ Detalhes em [O que é AI Native](https://aumi.group/blog/o-que-e-ai-native/) e [
 
 ## 🚀 Construindo agora
 
-- **AUMI Brain** — motor descobre → age → mede. Cluster LLM, publisher X/blog automático. 358 nodes em pgvector.
-- **MIND v0.1 alpha** — agente desktop com Ollama local, memória vault em Obsidian.
+- **MIND v0.1 alpha** — agente desktop com Ollama local, memória em vault git, sem cloud dependency.
 - **Blindagem de agentes enterprise** — red team contínuo, trilha auditável append-only, isolamento por tenant.
+- **Motor de conteúdo AI Native** — pipeline próprio de descoberta e produção com clustering LLM.
 
 Publico o processo em [X @blzzjao](https://x.com/blzzjao) e [blog AUMI](https://aumi.group/blog).
 
@@ -213,21 +213,7 @@ Publico o processo em [X @blzzjao](https://x.com/blzzjao) e [blog AUMI](https://
 
 <div align="center">
 
-<a href="https://aumi.group">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&pause=1200&color=E5E5E5&center=true&vCenter=true&width=720&height=48&lines=%3E+aumi.brain+--boot;%3E+enrich+node+--groq+llama-3.3-70b;%3E+publisher+x+--drafts%3D3+--persona%3Dblzzjao-v1;%3E+ok%2C+spec+first.+code+second.+ship+third." alt="typing" />
-</a>
-
-```txt
-     █████╗ ██╗   ██╗███╗   ███╗██╗    ██████╗ ██████╗  █████╗ ██╗███╗   ██╗
-    ██╔══██╗██║   ██║████╗ ████║██║    ██╔══██╗██╔══██╗██╔══██╗██║████╗  ██║
-    ███████║██║   ██║██╔████╔██║██║    ██████╔╝██████╔╝███████║██║██╔██╗ ██║
-    ██╔══██║██║   ██║██║╚██╔╝██║██║    ██╔══██╗██╔══██╗██╔══██║██║██║╚██╗██║
-    ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║    ██████╔╝██║  ██║██║  ██║██║██║ ╚████║
-    ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝    ╚═════╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝ ╚═╝  ╚═══╝
-
-         [ discover → act → measure ] · pgvector · groq · claude sonnet 5
-              cockpit.aumi.group · running since 2026-06-30
-```
+<img src="./assets/neural.svg" alt="neural pulse animation" width="100%" />
 
 </div>
 

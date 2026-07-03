@@ -1,0 +1,230 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="900" height="260">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3b82f6" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-orange" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f97316" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-yellow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#eab308" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#eab308" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- pulse traveling along path -->
+    <symbol id="pulse" overflow="visible">
+      <circle r="3" fill="#eab308">
+        <animate attributeName="opacity" values="0;1;0" dur="1.6s" repeatCount="indefinite"/>
+      </circle>
+    </symbol>
+  </defs>
+
+  <rect width="900" height="260" fill="#0a0a0a"/>
+
+  <!-- ============ LAYER 1 (input) — 4 neurons ============ -->
+  <g>
+    <!-- neuron 1 -->
+    <circle cx="80" cy="50" r="16" fill="url(#glow)"/>
+    <circle cx="80" cy="50" r="7" fill="#3b82f6">
+      <animate attributeName="r" values="7;10;7" dur="2s" begin="0s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0s" repeatCount="indefinite"/>
+    </circle>
+    <!-- neuron 2 -->
+    <circle cx="80" cy="115" r="16" fill="url(#glow)"/>
+    <circle cx="80" cy="115" r="7" fill="#3b82f6">
+      <animate attributeName="r" values="7;10;7" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <!-- neuron 3 -->
+    <circle cx="80" cy="180" r="16" fill="url(#glow)"/>
+    <circle cx="80" cy="180" r="7" fill="#3b82f6">
+      <animate attributeName="r" values="7;10;7" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ============ LAYER 2 (hidden) — 5 neurons ============ -->
+  <g>
+    <circle cx="330" cy="35" r="18" fill="url(#glow-orange)"/>
+    <circle cx="330" cy="35" r="8" fill="#f97316">
+      <animate attributeName="r" values="8;11;8" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="330" cy="90" r="18" fill="url(#glow-orange)"/>
+    <circle cx="330" cy="90" r="8" fill="#f97316">
+      <animate attributeName="r" values="8;11;8" dur="2s" begin="1.0s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="330" cy="145" r="18" fill="url(#glow-orange)"/>
+    <circle cx="330" cy="145" r="8" fill="#f97316">
+      <animate attributeName="r" values="8;11;8" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="330" cy="200" r="18" fill="url(#glow-orange)"/>
+    <circle cx="330" cy="200" r="8" fill="#f97316">
+      <animate attributeName="r" values="8;11;8" dur="2s" begin="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ============ LAYER 3 (hidden 2) — 4 neurons ============ -->
+  <g>
+    <circle cx="580" cy="55" r="18" fill="url(#glow-yellow)"/>
+    <circle cx="580" cy="55" r="8" fill="#eab308">
+      <animate attributeName="r" values="8;11;8" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="580" cy="115" r="18" fill="url(#glow-yellow)"/>
+    <circle cx="580" cy="115" r="8" fill="#eab308">
+      <animate attributeName="r" values="8;11;8" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="580" cy="175" r="18" fill="url(#glow-yellow)"/>
+    <circle cx="580" cy="175" r="8" fill="#eab308">
+      <animate attributeName="r" values="8;11;8" dur="2s" begin="2.0s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ============ LAYER 4 (output) — 3 neurons red ============ -->
+  <g>
+    <circle cx="820" cy="80" r="20" fill="#ef4444" opacity="0.15"/>
+    <circle cx="820" cy="80" r="9" fill="#ef4444">
+      <animate attributeName="r" values="9;13;9" dur="2s" begin="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="1.8s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="820" cy="130" r="20" fill="#ef4444" opacity="0.15"/>
+    <circle cx="820" cy="130" r="9" fill="#ef4444">
+      <animate attributeName="r" values="9;13;9" dur="2s" begin="2.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.2s" repeatCount="indefinite"/>
+    </circle>
+
+    <circle cx="820" cy="180" r="20" fill="#ef4444" opacity="0.15"/>
+    <circle cx="820" cy="180" r="9" fill="#ef4444">
+      <animate attributeName="r" values="9;13;9" dur="2s" begin="2.6s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" begin="2.6s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ============ CONNECTIONS layer1 → layer2 (static faint) ============ -->
+  <g stroke="#3b82f6" stroke-opacity="0.15" stroke-width="1">
+    <line x1="80" y1="50"  x2="330" y2="35"/>
+    <line x1="80" y1="50"  x2="330" y2="90"/>
+    <line x1="80" y1="50"  x2="330" y2="145"/>
+    <line x1="80" y1="115" x2="330" y2="35"/>
+    <line x1="80" y1="115" x2="330" y2="90"/>
+    <line x1="80" y1="115" x2="330" y2="145"/>
+    <line x1="80" y1="115" x2="330" y2="200"/>
+    <line x1="80" y1="180" x2="330" y2="90"/>
+    <line x1="80" y1="180" x2="330" y2="145"/>
+    <line x1="80" y1="180" x2="330" y2="200"/>
+  </g>
+
+  <!-- ============ CONNECTIONS layer2 → layer3 (static faint) ============ -->
+  <g stroke="#f97316" stroke-opacity="0.15" stroke-width="1">
+    <line x1="330" y1="35"  x2="580" y2="55"/>
+    <line x1="330" y1="35"  x2="580" y2="115"/>
+    <line x1="330" y1="90"  x2="580" y2="55"/>
+    <line x1="330" y1="90"  x2="580" y2="115"/>
+    <line x1="330" y1="90"  x2="580" y2="175"/>
+    <line x1="330" y1="145" x2="580" y2="55"/>
+    <line x1="330" y1="145" x2="580" y2="115"/>
+    <line x1="330" y1="145" x2="580" y2="175"/>
+    <line x1="330" y1="200" x2="580" y2="115"/>
+    <line x1="330" y1="200" x2="580" y2="175"/>
+  </g>
+
+  <!-- ============ CONNECTIONS layer3 → output (static faint) ============ -->
+  <g stroke="#eab308" stroke-opacity="0.15" stroke-width="1">
+    <line x1="580" y1="55"  x2="820" y2="80"/>
+    <line x1="580" y1="55"  x2="820" y2="130"/>
+    <line x1="580" y1="115" x2="820" y2="80"/>
+    <line x1="580" y1="115" x2="820" y2="130"/>
+    <line x1="580" y1="115" x2="820" y2="180"/>
+    <line x1="580" y1="175" x2="820" y2="130"/>
+    <line x1="580" y1="175" x2="820" y2="180"/>
+  </g>
+
+  <!-- ============ PULSES traveling along connections ============ -->
+  <!-- pulse 1: layer1→layer2 -->
+  <circle r="3" fill="#3b82f6">
+    <animateMotion dur="1.6s" repeatCount="indefinite">
+      <mpath href="#p1"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+  <path id="p1" d="M 80 115 L 330 90" style="fill:none;stroke:none"/>
+
+  <circle r="3" fill="#3b82f6">
+    <animateMotion dur="1.6s" begin="0.3s" repeatCount="indefinite">
+      <mpath href="#p2"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="0.3s" repeatCount="indefinite"/>
+  </circle>
+  <path id="p2" d="M 80 50 L 330 145" style="fill:none;stroke:none"/>
+
+  <circle r="3" fill="#3b82f6">
+    <animateMotion dur="1.6s" begin="0.6s" repeatCount="indefinite">
+      <mpath href="#p3"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="0.6s" repeatCount="indefinite"/>
+  </circle>
+  <path id="p3" d="M 80 180 L 330 200" style="fill:none;stroke:none"/>
+
+  <!-- pulse 2: layer2→layer3 -->
+  <circle r="3" fill="#f97316">
+    <animateMotion dur="1.6s" begin="0.9s" repeatCount="indefinite">
+      <mpath href="#p4"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="0.9s" repeatCount="indefinite"/>
+  </circle>
+  <path id="p4" d="M 330 90 L 580 115" style="fill:none;stroke:none"/>
+
+  <circle r="3" fill="#f97316">
+    <animateMotion dur="1.6s" begin="1.2s" repeatCount="indefinite">
+      <mpath href="#p5"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <path id="p5" d="M 330 145 L 580 55" style="fill:none;stroke:none"/>
+
+  <circle r="3" fill="#f97316">
+    <animateMotion dur="1.6s" begin="1.5s" repeatCount="indefinite">
+      <mpath href="#p6"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <path id="p6" d="M 330 200 L 580 175" style="fill:none;stroke:none"/>
+
+  <!-- pulse 3: layer3→output -->
+  <circle r="4" fill="#eab308">
+    <animateMotion dur="1.6s" begin="1.8s" repeatCount="indefinite">
+      <mpath href="#p7"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <path id="p7" d="M 580 115 L 820 130" style="fill:none;stroke:none"/>
+
+  <circle r="4" fill="#eab308">
+    <animateMotion dur="1.6s" begin="2.1s" repeatCount="indefinite">
+      <mpath href="#p8"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="2.1s" repeatCount="indefinite"/>
+  </circle>
+  <path id="p8" d="M 580 55 L 820 80" style="fill:none;stroke:none"/>
+
+  <circle r="4" fill="#eab308">
+    <animateMotion dur="1.6s" begin="2.4s" repeatCount="indefinite">
+      <mpath href="#p9"/>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="1.6s" begin="2.4s" repeatCount="indefinite"/>
+  </circle>
+  <path id="p9" d="M 580 175 L 820 180" style="fill:none;stroke:none"/>
+
+  <!-- ============ LABELS ============ -->
+  <text x="80" y="235" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#525252">signal</text>
+  <text x="330" y="235" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#525252">enrich</text>
+  <text x="580" y="235" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#525252">cluster</text>
+  <text x="820" y="235" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#525252">act</text>
+</svg>
