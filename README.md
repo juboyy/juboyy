@@ -213,8 +213,21 @@ Publico o processo em [X @blzzjao](https://x.com/blzzjao) e [blog AUMI](https://
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=juboyy&show_icons=true&hide_border=true&theme=dark&bg_color=0a0a0a&title_color=fff&icon_color=fff&text_color=a3a3a3&count_private=true&include_all_commits=true" alt="GitHub Stats" height="150" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=juboyy&layout=compact&hide_border=true&theme=dark&bg_color=0a0a0a&title_color=fff&text_color=a3a3a3&langs_count=8&hide=html,css,jupyter%20notebook" alt="Top Langs" height="150" />
+<a href="https://aumi.group">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&pause=1200&color=E5E5E5&center=true&vCenter=true&width=720&height=48&lines=%3E+aumi.brain+--boot;%3E+enrich+node+--groq+llama-3.3-70b;%3E+publisher+x+--drafts%3D3+--persona%3Dblzzjao-v1;%3E+ok%2C+spec+first.+code+second.+ship+third." alt="typing" />
+</a>
+
+```txt
+     █████╗ ██╗   ██╗███╗   ███╗██╗    ██████╗ ██████╗  █████╗ ██╗███╗   ██╗
+    ██╔══██╗██║   ██║████╗ ████║██║    ██╔══██╗██╔══██╗██╔══██╗██║████╗  ██║
+    ███████║██║   ██║██╔████╔██║██║    ██████╔╝██████╔╝███████║██║██╔██╗ ██║
+    ██╔══██║██║   ██║██║╚██╔╝██║██║    ██╔══██╗██╔══██╗██╔══██║██║██║╚██╗██║
+    ██║  ██║╚██████╔╝██║ ╚═╝ ██║██║    ██████╔╝██║  ██║██║  ██║██║██║ ╚████║
+    ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝    ╚═════╝ ╚═╝  ╚═╝ ╚═╝  ╚═╝ ╚═╝ ╚═╝  ╚═══╝
+
+         [ discover → act → measure ] · pgvector · groq · claude sonnet 5
+              cockpit.aumi.group · running since 2026-06-30
+```
 
 </div>
 
