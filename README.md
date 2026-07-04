@@ -213,7 +213,7 @@ Publico o processo em [X @blzzjao](https://x.com/blzzjao) e [blog AUMI](https://
 
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/juboyy/juboyy/main/assets/consciousness.gif" alt="emergence: void → noise → structure → network → thought → self" width="100%" />
+<img src="https://raw.githubusercontent.com/juboyy/juboyy/main/assets/consciousness.gif" alt="Conway's Game of Life · consciousness emerging from cellular automata" width="100%" />
 
 </div>
 
