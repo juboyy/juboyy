@@ -213,7 +213,7 @@ Publico o processo em [X @blzzjao](https://x.com/blzzjao) e [blog AUMI](https://
 
 <div align="center">
 
-<img src="https://cdn.jsdelivr.net/gh/juboyy/juboyy@main/assets/ascii.svg" alt="emergence: void → noise → structure → network → thought → self" width="100%" />
+<img src="https://raw.githubusercontent.com/juboyy/juboyy/main/assets/consciousness.gif" alt="emergence: void → noise → structure → network → thought → self" width="100%" />
 
 </div>
 
