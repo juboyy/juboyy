@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ev_btc_5m_1405",
+    "slug": "bitcoin-up-or-down-2026-06-20-1405",
+    "title": "Bitcoin Up or Down - June 20, 2:05 PM ET",
+    "active": true,
+    "closed": false,
+    "markets": [
+      {
+        "id": "0xmkt1405",
+        "slug": "btc-updown-2026-06-20-1405",
+        "question": "Will BTC be Up at 2:05 PM?",
+        "groupItemTitle": "5m BTC",
+        "active": true,
+        "closed": false,
+        "endDate": "2026-06-20T18:05:00Z",
+        "spread": 0.02,
+        "bestAsk": 0.71,
+        "bestBid": 0.69,
+        "outcomes": "[\"Up\", \"Down\"]",
+        "outcomePrices": "[\"0.68\", \"0.32\"]",
+        "clobTokenIds": "[\"111111111111\", \"222222222222\"]"
+      }
+    ]
+  },
+  {
+    "id": "ev_btc_5m_1410",
+    "slug": "bitcoin-up-or-down-2026-06-20-1410",
+    "title": "Bitcoin Up or Down - June 20, 2:10 PM ET",
+    "active": true,
+    "closed": false,
+    "markets": [
+      {
+        "id": "0xmkt1410",
+        "slug": "btc-updown-2026-06-20-1410",
+        "question": "Will BTC be Up at 2:10 PM?",
+        "active": true,
+        "closed": false,
+        "endDate": "2026-06-20T18:10:00Z",
+        "spread": 0.03,
+        "bestAsk": 0.55,
+        "bestBid": 0.52,
+        "outcomes": "[\"Up\", \"Down\"]",
+        "outcomePrices": "[\"0.54\", \"0.46\"]",
+        "clobTokenIds": "[\"333333333333\", \"444444444444\"]"
+      }
+    ]
+  },
+  {
+    "id": "ev_eth_other",
+    "slug": "ethereum-up-or-down-2026-06-20-1405",
+    "title": "Ethereum Up or Down",
+    "active": true,
+    "closed": false,
+    "markets": [
+      {
+        "id": "0xeth",
+        "slug": "eth-updown-2026-06-20-1405",
+        "question": "Will ETH be Up at 2:05 PM?",
+        "endDate": "2026-06-20T18:05:00Z",
+        "spread": 0.04,
+        "outcomes": "[\"Up\", \"Down\"]",
+        "outcomePrices": "[\"0.50\", \"0.50\"]",
+        "clobTokenIds": "[\"999\", \"888\"]"
+      }
+    ]
+  }
+]

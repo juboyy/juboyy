@@ -1,0 +1,8 @@
+# Runtime: NONE. The backend is standard-library only (http.server /
+# ThreadingHTTPServer), exactly like dashboard/app.py. It imports the local
+# `engine` and `crypto` packages (also stdlib-only on the default dry-run path).
+#
+# Dev-only (tests):
+#   pytest>=7
+#
+# Install dev deps with:  pip install pytest

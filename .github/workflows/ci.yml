@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+
+jobs:
+  python:
+    name: Python tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: quant-app
+    env:
+      # Keep the suite fully offline/deterministic in CI: the live smoke tests
+      # skip cleanly instead of attempting network fetches.
+      FEEDS_DISABLE_LIVE_SMOKE: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run pytest
+        run: python -m pytest engine crypto feeds backend scanner strategies portfolio supervisor -q
+
+  mobile:
+    name: Mobile typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install deps and typecheck
+        working-directory: quant-app/mobile
+        run: |
+          npm ci
+          npx tsc --noEmit

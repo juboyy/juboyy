@@ -1,0 +1,47 @@
+{
+  "expo": {
+    "name": "Quant Cockpit",
+    "slug": "quant-cockpit",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "quantcockpit",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": false,
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#0B0E11"
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.quantcockpit.app",
+      "infoPlist": {
+        "NSFaceIDUsageDescription": "Biometric confirmation is required to arm live trading and trigger the kill switch."
+      }
+    },
+    "android": {
+      "package": "com.quantcockpit.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#0B0E11"
+      }
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-local-authentication",
+        {
+          "faceIDPermission": "Biometric confirmation is required to arm live trading and trigger the kill switch."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": false
+    },
+    "extra": {
+      "useMock": true,
+      "apiBaseUrl": "https://localhost/api/v1",
+      "wsBaseUrl": "wss://localhost/api/v1"
+    }
+  }
+}

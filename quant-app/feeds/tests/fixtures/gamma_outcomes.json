@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ev_cheap_1",
+    "slug": "will-x-happen-2026",
+    "title": "Will X happen by 2026?",
+    "active": true,
+    "closed": false,
+    "markets": [
+      {
+        "id": "0xcheap1",
+        "slug": "will-x-happen-2026",
+        "question": "Will X happen by 2026?",
+        "active": true,
+        "closed": false,
+        "endDate": "2026-12-31T00:00:00Z",
+        "description": "Resolves YES if the milestone is achieved as determined by the organizing committee in its sole discretion. However the deadline may be extended unless the parties agree otherwise.",
+        "liquidity": "800",
+        "outcomes": "[\"Yes\", \"No\"]",
+        "outcomePrices": "[\"0.07\", \"0.93\"]",
+        "clobTokenIds": "[\"555555555555\", \"666666666666\"]"
+      }
+    ]
+  },
+  {
+    "id": "ev_expensive",
+    "slug": "favorite-market",
+    "title": "Favorite market",
+    "active": true,
+    "closed": false,
+    "markets": [
+      {
+        "id": "0xfav",
+        "slug": "favorite-market",
+        "question": "Will the favorite win?",
+        "active": true,
+        "closed": false,
+        "endDate": "2026-09-01T00:00:00Z",
+        "description": "Resolves according to the official UTC scoreboard at the source listed.",
+        "liquidity": "5000",
+        "outcomes": "[\"Yes\", \"No\"]",
+        "outcomePrices": "[\"0.80\", \"0.20\"]",
+        "clobTokenIds": "[\"777777777777\", \"888888888888\"]"
+      }
+    ]
+  },
+  {
+    "id": "ev_cheap_lowliq",
+    "slug": "thin-longshot",
+    "title": "Thin longshot",
+    "active": true,
+    "closed": false,
+    "markets": [
+      {
+        "id": "0xthin",
+        "slug": "thin-longshot",
+        "question": "Thin longshot?",
+        "active": true,
+        "closed": false,
+        "endDate": "2026-10-01T00:00:00Z",
+        "description": "Resolves according to the official source as published in UTC.",
+        "liquidity": "5",
+        "outcomes": "[\"Yes\", \"No\"]",
+        "outcomePrices": "[\"0.10\", \"0.90\"]",
+        "clobTokenIds": "[\"999999999999\", \"101010101010\"]"
+      }
+    ]
+  }
+]
